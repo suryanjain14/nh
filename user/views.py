@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from.forms import user,login
+from.forms import user #,login
 # Create your views here.
 def register(request):
 
@@ -17,7 +17,7 @@ def register(request):
 
     return render(request,'user/reg.html',{'form':form})
 
-def login(request):
+"""def login(request):
     if request.method == "POST":
         form = login(request.POST)
         if form.is_valid():
@@ -29,3 +29,4 @@ def login(request):
         form = login
 
     return render(request,'user/login.html',{'form':form})
+"""
