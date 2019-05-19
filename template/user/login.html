@@ -1,6 +1,6 @@
 {%extends "homepage/base.html"%}
 {%block content%}
-{% load crispy_forms_tags %}
+
 <div class="container">
   <hr>
 
@@ -11,19 +11,32 @@
     <h4 class="card-title mt-2">Log In</h4>
   </header>
   <article class="card-body">
-  <form method="post">
-      {% csrf_token %}
-    <div class="form-row">
-      <div class="form-group">
-        {{form|crispy}}
-      </div> <!-- form-group end.// -->
-      <div class="col form-group">
-      </div> <!-- form-group end.// -->
-    </div> <!-- form-row end.// -->
+  <form class="form-horizontal form" name="LoginForm"  method="post">
+    {% csrf_token %}
+    {% if next %}
+        <input type="hidden" name="next" value="{{ next }}" />
+    {% endif %}
+    <div class="control-group">
+        <label class="control-label" for="username">Username</label>
+        <div class="controls">
+            <input class="form-control" type="text" id="username" name="username"  placeholder="Username">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="password">Password</label>
+        <div class="controls">
+            <input class="form-control" type="password" name="password" id="password" placeholder="Password">
+        </div>
+  </div><br>
+  <div class="control-group">
+
       <div class="form-group">
           <button type="submit" class="btn btn-primary btn-block"> Log In  </button>
       </div> <!-- form-group// -->
-        </form>
+  </form>
+
+
+
   </article> <!-- card-body end .// -->
   <div class="border-top card-body text-center">Doesn't have an account? <a href="{% url 'signup' %}">Sign Up</a></div>
   </div> <!-- card.// -->

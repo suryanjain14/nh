@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.views import LoginView
 
 class user(UserCreationForm):
     email = forms.EmailField(widget=forms.TextInput(attrs={'class':'form-control form-control needs-validation','placeholder':'Enter email'}))
@@ -14,3 +15,13 @@ class user(UserCreationForm):
     class Meta:
         model = User
         fields = ['first_name','last_name','username','email','password1','password2',]
+
+class login(LoginView):
+    username = forms.CharField(widget=forms.TextInput(
+        attrs={'class': 'form-group form-control needs-validation needs-validation', 'placeholder': 'Last Name'}))
+    password = forms.CharField(label=("Password"), widget=forms.PasswordInput(
+        attrs={'class': 'form-group form-control needs-validation', 'placeholder': 'Enter Password'}))
+
+    class Meta:
+        model = User
+        fields =['username','password']
