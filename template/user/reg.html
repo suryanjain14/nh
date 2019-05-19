@@ -1,0 +1,52 @@
+{%extends "homepage/base.html"%}
+{%block content%}
+{% load crispy_forms_tags %}
+<div class="container">
+
+  <hr>
+  
+  
+  <div class="row justify-content-center">
+  <div class="col-md-6">
+  <div class="card">
+  <header class="card-header">
+    <a href="" class="float-right btn btn-outline-primary mt-1">Log in</a>
+    <h4 class="card-title mt-2">Sign up</h4>
+  </header>
+  <article class="card-body">
+  <form method="post">
+      {% csrf_token %}
+    <div class="form-row">
+      <div class="form-group">
+                 {{form|crispy}}
+      </div> <!-- form-group end.// -->
+      <div class="col form-group">
+      </div> <!-- form-group end.// -->
+    </div> <!-- form-row end.// -->
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block"> Register  </button>
+      </div> <!-- form-group// -->
+      <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of use and Privacy Policy.</small>
+  </form>
+  </article> <!-- card-body end .// -->
+  <div class="border-top card-body text-center">Have an account? <a href="">Log In</a></div>
+  </div> <!-- card.// -->
+  </div> <!-- col.//-->
+  
+  </div> <!-- row.//-->
+  
+  
+  </div>
+  <!--container end.//-->
+  
+  <br><br>
+  <article class="bg-secondary mb-3">
+  <div class="card-body text-center">
+      <h3 class="text-white mt-3">NerdHerd</h3>
+  <p class="h5 text-white">Come,Collab,Learn</p>
+  <p><a class="btn btn-outline-light text-light" target="_blank" href="{%url 'home'%}"> Home
+   <i class="fa fa-window-restore "></i></a></p>
+  </div>
+  <br><br>
+  </article>
+{%endblock content%}
