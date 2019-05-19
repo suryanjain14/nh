@@ -18,7 +18,17 @@
       {% csrf_token %}
     <div class="form-row">
       <div class="form-group justify-content-center">
-                 {{form|crispy}}
+                 <div class="row">
+      <div class="col-6">
+        {{ form.first_name|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.last_name|as_crispy_field }}
+      </div>
+    </div>
+    {{ form.email|as_crispy_field }}
+    {{ form.password1|as_crispy_field }}
+    {{ form.password2|as_crispy_field }}
       </div> <!-- form-group end.// -->
     </div> <!-- form-row end.// -->
       <div class="form-group">
