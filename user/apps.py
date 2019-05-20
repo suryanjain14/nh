@@ -2,4 +2,7 @@ from django.apps import AppConfig
 
 
 class RegisterConfig(AppConfig):
-    name = 'register'
+    name = 'user'
+
+    def ready(self):
+        import user.signals
