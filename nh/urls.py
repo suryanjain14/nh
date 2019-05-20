@@ -19,6 +19,9 @@ from homepage import views as h
 from user import views as u
 from django.contrib.auth import views as auth
 from user.forms import login as l
+from django.conf import settings
+from django.conf.urls.static import static
+
 from  user import forms
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +30,7 @@ urlpatterns = [
     path('logout/', auth.LogoutView.as_view(template_name='user/logout.html'), name='logout'),
     path('signup/', u.register, name='signup'),
     path('profile/', u.profile, name='profile'),
-
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
