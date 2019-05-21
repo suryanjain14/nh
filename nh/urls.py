@@ -16,13 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from homepage import views as h
-from user import views as u
+from users import views as u
 from django.contrib.auth import views as auth
-from user.forms import login as l
+from users.forms import login as l
 from django.conf import settings
 from django.conf.urls.static import static
 
-from  user import forms
+#from  user import forms
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', h.h, name='home'),
