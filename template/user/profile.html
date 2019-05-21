@@ -15,7 +15,7 @@
                                         <form class="md-form">
                                                 <div class="file-field">
                                                   <div class="mb-4">
-                                                    <img src="{{ user.profile.image.url }}" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+                                                    <img src="{{ users.profile.image.url }}" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
                                                   </div>
                                                   <div class="d-flex justify-content-center">
                                                     <div class="btn btn-mdb-color btn-rounded float-left">
@@ -92,14 +92,40 @@
                                         <hr />
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;">Something</label>
+                                                <label style="font-weight:bold;">City</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                Something
+                                                {{ users.profile.city }}
                                             </div>
                                         </div>
                                         <hr />
-
+                                         <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Country</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{ users.profile.country }}
+                                            </div>
+                                        </div>
+                                        <hr />
+                                         <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">College</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{ users.profile.college }}
+                                            </div>
+                                        </div>
+                                        <hr />
+                                         <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">DOB</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{ users.profile.dob }}
+                                            </div>
+                                        </div>
+                                        <hr />
                                     </div>
 
                                 </div>
