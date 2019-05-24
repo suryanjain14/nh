@@ -1,4 +1,153 @@
 {%extends "homepage/base.html"%}
+{%load static%}
 {%block content%}
+<!-- Start Home Section -->	
+<div id="home">
+	
 
+<!-- Start Image Slider -->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
+	<ol class="carousel-indicators">
+		<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+		<li data-target="#carouselExampleIndicators" data-slide-to="1" ></li>
+		<li data-target="#carouselExampleIndicators" data-slide-to="2" ></li>
+	</ol>
+
+	<div class="carousel-inner" role="listbox">
+		<!-- Slide 1 -->
+		<div class="carousel-item active" style="background-image: url({%static 'img/slide1.png'%});">
+			<div class="carousel-caption text-center">
+				<h1>Welcome To Nerdherd</h1>
+				<h3>Come, Collab, Learn</h3>
+				<a class="btn btn-outline-light btn-lg" href="#resources">Get Started</a>
+			</div>
+		</div>
+
+		<!-- Slide 2 -->
+		<div class="carousel-item" style="background-image: url({%static 'img/slide2.jpg'%});">
+			<div class="carousel-caption text-center">
+				<h1>Projects</h1>
+				<h3>Work on a 3-5 person team</h3>
+				<h3>Build an app, make a website, or even a game</h3>
+				<h3>Gain expirience with new languages and framework</h3>
+			</div>
+		</div>
+
+		<!-- Slide 3 -->
+		<div class="carousel-item" style="background-image: url({%static 'img/slide3.jpg'});">
+			<div class="carousel-caption text-center">
+				
+			</div>
+		</div>
+	</div> <!-- End Carousel Inner -->
+	<!-- Prev and Next Button -->
+	<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	</a>
+	<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+	</a>
+</div>
+<!-- End Image Slider -->
+</div>
+<!-- End Home Section -->
+
+<!-- Start Resources Section -->	
+<div id="resources" class="offset">
+	<div class="col-12 narrow text-center">
+	<h1>Resources</h1>
+	<p class="lead">Here you can find our collection of programming tutorials. We welcome feedback on our work and are happy to answer any questions you might have on how to complete the projects!</p>
+	<a class="btn btn-secondary btn-md" href="" target="_blank">CLICK HERE</a>
+</div>
+</div>
+<!-- End Resource Section -->
+
+<!-- Start Projects Section -->	
+<div id="projects" class="offset">
+	<div class="jumbotron container-fluid">
+	<div class="col-12 text-center">		
+		<h3 class="heading">Projects</h3>
+		<div class="heading-underline"></div>
+	</div>   	
+	<div class="row no-padding">
+		<div class="col-sm-4">
+			<div class="projects">
+				<a href="{%static 'img/projects/1.jpg'%}">
+					<img src="{%static 'img/projects/1.png'%}" target="_blank">
+				</a>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="projects">
+				<a href="{%static 'img/projects/2.png'%}">
+					<img src="{%static 'img/projects/2.png'%}" target="_blank">
+				</a>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="projects">
+				<a href="{%static 'img/projects/3.jpg'%}">
+					<img src="{%static 'img/projects/3.jpg'%}" target="_blank">
+				</a>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="projects">
+				<a href="{%static 'img/projects/4.jpg'%}">
+					<img src="{%static 'img/projects/4.jpg'%}" target="_blank">
+				</a>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="projects">
+				<a href="{%static 'img/projects/5.jpeg'%}">
+					<img src="{%static 'img/projects/5.jpeg'%}" target="_blank">
+				</a>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="projects">
+				<a href="{%static 'img/projects/6.png'%}">
+					<img src="{%static 'img/projects/6.png'%}" target="_blank">
+				</a>
+			</div>
+		</div>
+
+		<div class="narrow text-center">
+			<div class="col-12">
+				<p class="lead">Want To Start Programming? Learn Programming as an Absolute Beginner.</p>
+				<a class="btn btn-secondary btn-md" href="" target="_blank">CODING GUIDE</a>
+			</div>
+		</div>
+	</div><!-- End Of Row -->	
+	</div><!-- End Of Jumbotron -->
+</div>
+<!-- End Projects Section -->
+
+<!-- Start Events Section -->	
+<div id="events" class="offset">
+	<div class="col-12 text-center">
+		<h3 class="heading">Events</h3>
+		<div class="heading-underline"></div>
+	</div>
+<div class="row padding">
+	<div class="col-md-6">
+		<div class="card text-center">
+			<img class="card-img-top" src="{%static 'img/events/1.jpg'%}">
+			<div class="card-body">
+				<h4>Online Hackathon</h4>
+				<p>"A common problem statement is given to the teams, which they have to solve and submit before the deadline."</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="card text-center">
+			<img class="card-img-top" src="{%static 'img/events/3.jpg'%}">
+			<div class="card-body">
+				<h4>Coming Soon</h4>
+			</div>
+		</div>
+	</div>
+</div>	<!-- End Of Row -->
+</div>
 {%endblock content%}
