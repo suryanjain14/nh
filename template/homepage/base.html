@@ -31,13 +31,7 @@
 				<a class="nav-link" href="#resources">Resources</a>
 			</li>
 
-			<li class="nav-item">
-				<a class="nav-link" href="#events">Events</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#contact">Contact</a>
-			</li>
-				<li class="nav-item dropdown">
+			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop" href="#projects">Projects</a>
 				<div class="dropdown-menu">
 					{%if user.is_authenticated %}
@@ -49,6 +43,13 @@
               		{%endif%}
 				</div>
 			  </li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="#events">Events</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#contact">Contact</a>
+			</li>
 
 			<ul class="navbar-nav ml-auto">
 		{%if user.is_authenticated %}
