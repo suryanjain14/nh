@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from homepage import views as h
-from users import views as u
+from homepage import views as hv
+from users import views as uv
 from django.contrib.auth import views as auth
 from users.forms import login as l
 from django.conf import settings
@@ -25,11 +25,11 @@ from django.conf.urls.static import static
 #from  user import forms
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', h.h, name='home'),
+    path('', hv.h, name='home'),
     path('login/' , l.as_view(template_name='user/login.html'), name='login'),
     path('logout/', auth.LogoutView.as_view(template_name='user/logout.html'), name='logout'),
-    path('signup/', u.register, name='signup'),
-    path('profile/', u.profile, name='profile'),
+    path('signup/', uv.register, name='signup'),
+    path('profile/', uv.profile, name='profile'),
 ]
 
 if settings.DEBUG:
