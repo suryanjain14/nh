@@ -11,7 +11,7 @@ class profile(models.Model):
     country = models.CharField(max_length=20,null=True,default='Indiaa')
     college=models.CharField(max_length=20,null=True,default='IIPS')
     dob=models.DateField(max_length=20,null=True)
-    bio = models.TextField(null=True)
+
 
     def __str__(self):
 
