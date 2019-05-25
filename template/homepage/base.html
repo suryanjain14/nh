@@ -30,22 +30,44 @@
 			<li class="nav-item">
 				<a class="nav-link" href="#resources">Resources</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#projects">Projects</a>
-			</li>
+
 			<li class="nav-item">
 				<a class="nav-link" href="#events">Events</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#contact">Contact</a>
 			</li>
+				<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop" href="#projects">Projects</a>
+				<div class="dropdown-menu">
+					{%if user.is_authenticated %}
+				  <a class="dropdown-item" href="#">On Going</a>
+				  <a class="dropdown-item" href="#">Completed</a>
+				  <a class="dropdown-item" href="#">New</a>
+					{%else%}
+              		<a class="dropdown-item" href="#">New</a>
+              		{%endif%}
+				</div>
+			  </li>
+
+			<ul class="navbar-nav ml-auto">
+		{%if user.is_authenticated %}
 
 			<li class="nav-item">
-				<a class="nav-link" href="{%url 'login'%}" >Login</a>
+				<a class="nav-link" href="{%url 'profile'%}">{{user.username}}</a>
+			</li>
+			<li class="nav-item ">
+					<a href="{%url 'logout'%}"  class="nav-link">Logout</a>
+			</li>
+		{%else%}
+				<li class="nav-item">
+				<a class="nav-link" href="#{%url 'login'%}">Login</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="{%url 'signup'%}">Signup</a>
+				<a class="nav-link" href="#{%url 'signup'%}">Signup</a>
 			</li>
+
+		{%endif%}
 		</ul>
 	</div>
 
@@ -79,7 +101,17 @@
 </div>
 <!-- End Contact Section -->
 
+<div class="container">
+  {%if messages%}
 
+      {%for message in messages %}
+      <div class="alert alert-{{message.tags}} ">
+      {{message}}
+    </div>
+      {%endfor%}
+	{%endif%}
+
+</div>
 
 
 <!--- Script Source Files -->
