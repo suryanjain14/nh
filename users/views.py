@@ -42,8 +42,6 @@ def profileupdate(request):
     if request.method== 'POST':
         u_form = userupdateform(request.POST,instance=request.user)
         p_form = profileupdateform(request.POST,request.FILES,instance=request.user.profile)
-
-
         u_form.save()
         p_form.save()
         messages.success(request, f'Profile Saved')

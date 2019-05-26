@@ -10,9 +10,11 @@
     <h4 class="card-title mt-2">Profile</h4>
   </header>
   <article class="card-body">
-      <div class="mb-4">
-          <img src="{{ user.profile.image.url }}" id="imgProfile" ><!--style="width: 150px; height: 150px" class="img-thumbnail" />-->
+
+      <div class="media">
+        <img class="rounded-circle account-img mx-auto d-block img-thumbnail"src="{{ user.profile.image.url }}" style="width:308px;height:150px;">
       </div>
+
   <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
     <div class="form-row">
