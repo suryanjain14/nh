@@ -35,12 +35,9 @@ class userupdateform(forms.ModelForm):
         attrs={'class': 'form-inline form-control needs-validation ', 'placeholder': 'First Name'}))
     last_name = forms.CharField(widget=forms.TextInput(
         attrs={'class': ' form-inline form-control needs-validation', 'placeholder': 'Last Name'}))
-    username = forms.CharField(widget=forms.TextInput(
-        attrs={'class': 'form-group form-control needs-validation needs-validation', 'placeholder': 'Last Name'}))
-
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'username', 'email']
+        fields = ['first_name', 'last_name','email']
 
 class profileupdateform(forms.ModelForm):
     class Meta:

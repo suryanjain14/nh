@@ -15,7 +15,7 @@
         <img class="rounded-circle account-img mx-auto d-block img-thumbnail"src="{{ user.profile.image.url }}" style="width:308px;height:150px;">
       </div>
 
-  <form method="post" enctype="multipart/form-data">
+  <form method="POST" enctype="multipart/form-data">
       {% csrf_token %}
     <div class="form-row">
       <div class="form-group justify-content-center">
@@ -48,6 +48,5 @@
   </div> <!-- row.//-->
   </div>
   <!--container end.//-->
-
   <br><br>
 {%endblock content%}
