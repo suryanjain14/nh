@@ -3,6 +3,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from.forms import user,userupdateform, profileupdateform #,login
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
+from nh import settings
 
 
 
@@ -14,6 +16,12 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
+            email = form.cleaned_data.get('email')
+            subject='Thankyou for registering on NerdHerd!'
+            message='Welcome to NerdHerd,We very much appreciate your response'
+            from_email=settings.EMAIL_HOST_USER
+            to_list=[email]
+            send_mail(subject,message,from_email,to_list,fail_silently=True)
             messages.success(request, f'{username} Account created!')
             return redirect('home')
     else:
