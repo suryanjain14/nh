@@ -5,6 +5,7 @@ from.forms import user,userupdateform, profileupdateform #,login
 from django.contrib.auth.decorators import login_required
 
 
+
 # Create your views here.
 def register(request):
 
