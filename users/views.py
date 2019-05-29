@@ -17,7 +17,7 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             email = form.cleaned_data.get('email')
-            subject='Thankyou for registering on NerdHerd!'
+            subject='Thankyou for registering on NerdHerd!!'
             message='Welcome to NerdHerd,We very much appreciate your response'
             from_email=settings.EMAIL_HOST_USER
             to_list=[email]
