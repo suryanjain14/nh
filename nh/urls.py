@@ -31,6 +31,14 @@ urlpatterns = [
     path('signup/', uv.register, name='signup'),
     path('profile/', uv.profile, name='profile'),
     path('profileup/', uv.profileupdate, name='profileup'),
+    path('password-reset/', auth.PasswordResetView.as_view(template_name='user/password_reset.html'), name='password_reset'),
+    path('password-reset-done/', auth.PasswordResetDoneView.as_view(template_name='user/password_reset_done.html'), name='password_reset_done'),
+    path('password-reset-confirm/<uidb64>/<token>/', auth.PasswordResetConfirmView.as_view(template_name='user/password_reset_confirm.html'), name='password_reset_confirm'),
+
+    path('password-reset-complete/',
+         auth.PasswordResetCompleteView.as_view(template_name='user/password_reset_complete.html'),
+         name='password_reset_complete'),
+
 ]
 
 if settings.DEBUG:
