@@ -40,7 +40,7 @@ urlpatterns = [
          ),
     path('db/', uv.db, name='db'),
     path(r'^profile/(?P<pk>\d+)/$', uv.profile_with_pk, name='view_profile'),
-    path(r'^connect/(?P<operation>.+)/(?P<pk>\d+)/$', uv.Friend, name='edit_friends'),
+    path(r'^connect/(?P<operation>.+)/(?P<pk>\d+)/$', uv.friend, name='friends'),
     path('db/add/', uv.add, name='add'),
     path('db/remove/', uv.remove, name='remove'),
 ]
