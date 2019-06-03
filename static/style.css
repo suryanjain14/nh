@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
 body {
-	 overflow-x: hidden;
-	 font-family: 'Lato', sans-serif
+	 overflow-x: visible;
+	 overflow-y: visible;
+	 font-family: 'Lato', sans-serif;
 	 color: #505962;
 }
 
@@ -110,7 +111,7 @@ h3.heading {
 }
 
 .projects {
-	overflow: hidden;
+	overflow: visible;
 }
 
 .card {
