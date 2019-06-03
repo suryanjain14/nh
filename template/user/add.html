@@ -1,0 +1,34 @@
+{%extends "homepage/base.html"%}
+{%block content%}
+
+
+
+ <div class="col-md-">
+                <div class="card gedf-card" >
+                    <div class="card-body">
+                        <header>
+                        <h5 class="card-title">All Users</h5>
+                        </header>
+                        {% for user in users %}
+                            <div class="card">
+                                <div class="media">
+                                    <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" style="width:100px;height:75px;">
+                                        <div class="media-body">
+                                            <a href="{% url 'view_profile' pk=user.pk %}">
+                                            <h2 class="account-heading">{{ user.username }}</h2>
+                                            </a>
+                                            <p class="text-secondary">{{ user.email }}</p>
+                                        </div>
+                                    <div class=".col-6 .col-md-4">
+                                    <a href="{%url 'edit_friends' operation='add'
+                                    pk=user.pk %}"> <button type="button" class="btn btn-outline-info">Add</button></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+                    </div>
+                </div>
+
+
+{%endblock content%}

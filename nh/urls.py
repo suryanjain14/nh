@@ -18,15 +18,15 @@ from django.urls import path
 from homepage import views as hv
 from users import views as uv
 from django.contrib.auth import views as auth
-from users.forms import login as l
+from users.forms import login
 from django.conf import settings
 from django.conf.urls.static import static
 
-#from  user import forms
+# from  user import forms
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', hv.h, name='home'),
-    path('login/' , l.as_view(template_name='user/login.html'), name='login'),
+    path('login/', login.as_view(template_name='user/login.html'), name='login'),
     path('logout/', auth.LogoutView.as_view(template_name='user/logout.html'), name='logout'),
     path('signup/', uv.register, name='signup'),
     path('profile/', uv.profile, name='profile'),
@@ -34,11 +34,15 @@ urlpatterns = [
     path('password-reset/', auth.PasswordResetView.as_view(template_name='user/password_reset.html'), name='password_reset'),
     path('password-reset-done/', auth.PasswordResetDoneView.as_view(template_name='user/password_reset_done.html'), name='password_reset_done'),
     path('password-reset-confirm/<uidb64>/<token>/', auth.PasswordResetConfirmView.as_view(template_name='user/password_reset_confirm.html'), name='password_reset_confirm'),
-
     path('password-reset-complete/',
          auth.PasswordResetCompleteView.as_view(template_name='user/password_reset_complete.html'),
-         name='password_reset_complete'),
-
+         name='password_reset_complete'
+         ),
+    path('db/', uv.db, name='db'),
+    path(r'^profile/(?P<pk>\d+)/$', uv.profile_with_pk, name='view_profile'),
+    path(r'^connect/(?P<operation>.+)/(?P<pk>\d+)/$', uv.Friend, name='edit_friends'),
+    path('db/add/', uv.add, name='add'),
+    path('db/remove/', uv.remove, name='remove'),
 ]
 
 if settings.DEBUG:

@@ -5,7 +5,8 @@ from.forms import user,userupdateform, profileupdateform #,login
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from nh import settings
-
+from django.contrib.auth.models import User
+from . models import Friend
 
 
 # Create your views here.
@@ -29,6 +30,7 @@ def register(request):
 
     return render(request,'user/reg.html',{'form':form})
 
+
 """def login(request):
     if request.method == "POST":
         form = login(request.POST)
@@ -45,6 +47,7 @@ def register(request):
 @login_required
 def profile(request):
     return render(request, 'user/profile.html')
+
 
 @login_required
 def profileupdate(request):
@@ -66,3 +69,41 @@ def profileupdate(request):
         'p_form': p_form
     }
     return render(request, 'user/profileupdate.html',context)
+
+
+@login_required()
+def db(request):
+    users = User.objects.all().order_by('username')
+    friend = Friend.objects.get(current_user=request.user)
+    friends = friend.users.all()
+    arg = {'users': users, 'friends': friends}
+    return render(request, 'user/db.html', arg)
+
+
+def profile_with_pk(request,pk):
+
+    user = User.objects.get(pk=pk)
+    arg = {'user': user}
+    return render(request, 'user/profile.html', arg)
+
+
+def friend(request, operation, pk):
+    new_friend = User.objects.get(pk=pk)
+    if operation == 'add':
+        Friend.make_friend(request.user, new_friend)
+    elif operation == 'remove':
+        Friend.remove_friend(request.user, new_friend)
+    return render(request, 'user/db.html')
+
+
+def add(request):
+    users = User.objects.all().order_by('username')
+    arg = {'users': users}
+    return render(request, 'user/add.html',arg)
+
+
+def remove(request):
+    friend = Friend.objects.get(current_user=request.user)
+    friends = friend.users.all()
+    arg = {'friends': friends}
+    return render(request, 'user/remove.html', arg)
