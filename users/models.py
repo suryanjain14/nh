@@ -33,7 +33,7 @@ class Friend(models.Model):
 
     @classmethod
     def remove_friend(cls, current_user, new_friend):
-        friend, created = cls.objects.get_or_created(
+        friend, created = cls.objects.get_or_create(
             current_user=current_user
         )
         friend.users.remove(new_friend)

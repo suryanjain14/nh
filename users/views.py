@@ -87,13 +87,13 @@ def profile_with_pk(request,pk):
     return render(request, 'user/profile.html', arg)
 
 
-def friend(request, operation, pk):
+def friend(request,operation, pk):
     new_friend = User.objects.get(pk=pk)
     if operation == 'add':
         Friend.make_friend(request.user, new_friend)
     elif operation == 'remove':
         Friend.remove_friend(request.user, new_friend)
-    return render(request, 'user/db.html')
+    return redirect('db.html')
 
 
 def add(request):

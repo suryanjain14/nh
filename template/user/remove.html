@@ -20,8 +20,9 @@
                                             <p class="text-secondary">{{ friend.email }}</p>
                                         </div>
                                     <div class=".col-6 .col-md-4">
-                                    <a href="{%url 'edit_friends' operation='remove' pk=friend.pk %}"> <button type="button" class="btn btn-outline-secondary">Remove
-                                    </button></a>
+                                    <a href="{% url 'friends' operation='remove' pk=friend.pk %}">
+                                        <button type="button" class="btn btn-outline-secondary">Remove</button>
+                                    </a>
                                     </div>
                                 </div>
                             </div>
