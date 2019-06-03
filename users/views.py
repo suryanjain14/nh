@@ -93,13 +93,15 @@ def friend(request,operation, pk):
         Friend.make_friend(request.user, new_friend)
     elif operation == 'remove':
         Friend.remove_friend(request.user, new_friend)
-    return redirect('db.html')
+    return redirect('db')
 
 
 def add(request):
     users = User.objects.all().order_by('username')
-    arg = {'users': users}
-    return render(request, 'user/add.html',arg)
+    friend = Friend.objects.get(current_user=request.user)
+    friends = friend.users.all()
+    arg = {'users': users, 'friends': friends}
+    return render(request, 'user/add.html', arg)
 
 
 def remove(request):

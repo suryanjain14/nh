@@ -92,26 +92,13 @@
             </div>
             <div class="col-md-3">
                 <div class="card gedf-card" >
-                    <div class="card-body" style="height:250px;overflow:auto;">
-                        <header>
-                        <h5 class="card-title">All Users</h5>
-                        </header>
-                        {% for user in users %}
-                            <a href="{% url 'view_profile' pk=user.pk %}">
-                                <h3>{{ user.username }}</h3>
-                            </a>
-                        {% endfor %}
-                        <a href="#" class="card-link">Add</a>
-                    </div>
-                </div>
-                <div class="card gedf-card" >
                   <div class="card-body" style="height:250px;overflow:auto;">
                       <header>
                       <h5 class="card-title">Friends</h5>
                       </header>
                       {% for friend in friends %}
                           <a href="{% url 'view_profile' pk=friend.pk %}">
-                              <h3>{{ friend.username }}</h3>
+                              <h4>{{ friend.username }}</h4>
                           </a>
                       {% endfor %}
                       <a href="add" class="card-link">Add</a>
