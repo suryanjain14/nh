@@ -8,13 +8,15 @@ class Project(models.Model):
     data = models .TextField()
     level = models.TextField(max_length=20)
     tag = models.TextField(max_length=20, null=True)
+    timestamp = models.PositiveSmallIntegerField(default=1, max_length='2')
 
 
-    
 class Userpro(models.Model):
     project = models.ManyToManyField(User)
     current_project = models.ForeignKey(Project, on_delete=models.CASCADE)
 
+
+'''
     @classmethod
     def start_project(cls, current_project, new_friend):
         project, created = cls.objects.get_or_create(
@@ -23,11 +25,13 @@ class Userpro(models.Model):
         Userpro.users.add(new_friend)
 
     @classmethod
-    def remove_friend(cls, current_user, new_friend):
-        friend, created = cls.objects.get_or_create(
+    def finish_project(cls, current_user, new_friend):
+        project, created = cls.objects.get_or_create(
             current_user=current_user
         )
-        friend.users.remove(new_friend)
+        project.users.remove(new_friend)
+'''
 
-class proUser(models.Model):
+
+class ProUser(models.Model):
     completion = models.IntegerField()
