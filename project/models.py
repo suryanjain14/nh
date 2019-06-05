@@ -8,7 +8,7 @@ class Project(models.Model):
     data = models .TextField()
     level = models.TextField(max_length=20)
     tag = models.TextField(max_length=20, null=True)
-    timestamp = models.PositiveSmallIntegerField(default=1, max_length='2')
+    #timestamp = models.PositiveSmallIntegerField(default=1, max_length='2')
 
 
 class Userpro(models.Model):
