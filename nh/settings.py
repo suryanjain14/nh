@@ -38,6 +38,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'homepage',
+    'project',
     'users',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -138,7 +139,7 @@ STATIC_ROOT=os.path.join(BASE_DIR,'assets')
 
 CRISPY_TEMPLATE_FORMS = 'bootstrap4'
 
-LOGIN_REDIRECT_URL= 'home'
+LOGIN_REDIRECT_URL = 'home'
 
 LOGIN_URL = 'login'
 
