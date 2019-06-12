@@ -15,4 +15,3 @@ def db(request):
 
 def profile_with_pk(request):
     return render(request, 'user/profile.html')
-#kuch bhi
