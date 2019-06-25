@@ -82,6 +82,9 @@
 			<ul class="navbar-nav ml-auto">
 		{%if user.is_authenticated %}
 
+			<li class="nav-item ">
+					<a href="{%url 'home1'%}"  class="nav-link">News</a>
+			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="{%url 'db'%}">{{user.username}}</a>
 			</li>
