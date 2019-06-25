@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'homepage',
     'project',
     'users',
+    'groups',
     'django.contrib.admin',
     'django.contrib.auth',
     'crispy_forms',
