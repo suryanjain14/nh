@@ -46,6 +46,7 @@ urlpatterns = [
     path('db/remove/', uv.remove, name='remove'),
     path('event/', include('news_update.urls'), name='event'),
 
+
 ]
 
 if settings.DEBUG:

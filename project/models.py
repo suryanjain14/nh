@@ -11,7 +11,6 @@ class Project(models.Model):
     #timestamp = models.PositiveSmallIntegerField(default=1, max_length='2')
 
     def __str__(self):
-
         return self.name
 
 
