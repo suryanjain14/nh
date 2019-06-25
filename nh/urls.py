@@ -14,13 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from homepage import views as hv
 from users import views as uv
 from django.contrib.auth import views as auth
 from users.forms import login
 from django.conf import settings
 from django.conf.urls.static import static
+from news_update import urls
 
 # from  user import forms
 urlpatterns = [
@@ -43,6 +44,8 @@ urlpatterns = [
     path(r'^connect/(?P<operation>.+)/(?P<pk>\d+)/$', uv.friend, name='friends'),
     path('db/add/', uv.add, name='add'),
     path('db/remove/', uv.remove, name='remove'),
+    path('event/', include('news_update.urls'), name='event'),
+
 ]
 
 if settings.DEBUG:

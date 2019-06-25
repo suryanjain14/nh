@@ -10,6 +10,10 @@ class Project(models.Model):
     tag = models.TextField(max_length=20, null=True)
     #timestamp = models.PositiveSmallIntegerField(default=1, max_length='2')
 
+    def __str__(self):
+
+        return self.name
+
 
 class Userpro(models.Model):
     project = models.ManyToManyField(User)
