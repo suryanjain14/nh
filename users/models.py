@@ -21,7 +21,7 @@ class profile(models.Model):
 
 class Friend(models.Model):
     users = models.ManyToManyField(to=User)
-    current_user = models.ForeignKey(User,related_name='owner', on_delete=models.CASCADE, null=True)
+    current_user = models.ForeignKey(User, related_name='owner', on_delete=models.CASCADE, null=True)
 
 
 
