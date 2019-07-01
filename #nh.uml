@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DjangoModelDependency</ID>
+  <OriginalElement>#nh</OriginalElement>
+  <nodes>
+    <node x="947.5" y="505.0">project.models.Userprodetal</node>
+    <node x="969.5" y="625.0">project.models.Project</node>
+    <node x="-22.0" y="505.0">users.models.profile</node>
+    <node x="1464.0" y="385.0">django.contrib.contenttypes.models.ContentType</node>
+    <node x="1849.5" y="625.0">groups.models.Progroup</node>
+    <node x="1832.0" y="185.0">groups.models.Groupdetails</node>
+    <node x="605.0" y="-15.0">news_update.models.Post</node>
+    <node x="262.5" y="425.0">users.models.Friend</node>
+    <node x="1045.5" y="265.0">django.contrib.auth.models.Group</node>
+    <node x="1849.5" y="65.0">groups.models.Usrgroup</node>
+    <node x="1023.5" y="385.0">django.contrib.auth.models.Permission</node>
+    <node x="609.5" y="625.0">project.models.Userpro</node>
+    <node x="570.0" y="505.0">django.contrib.auth.models.User</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="groups.models.Progroup" target="groups.models.Groupdetails">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="groups.models.Usrgroup" target="groups.models.Groupdetails">
+      <point x="0.0" y="15.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+    <edge source="django.contrib.auth.models.User" target="django.contrib.auth.models.Permission">
+      <point x="80.0" y="-15.0" />
+      <point x="800.0" y="400.0" />
+      <point x="-176.5" y="-0.0" />
+    </edge>
+    <edge source="news_update.models.Post" target="django.contrib.auth.models.User">
+      <point x="0.0" y="15.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+    <edge source="users.models.Friend" target="django.contrib.auth.models.User">
+      <point x="97.5" y="-0.0" />
+      <point x="680.0" y="440.0" />
+      <point x="-40.0" y="-15.0" />
+    </edge>
+    <edge source="project.models.Userprodetal" target="django.contrib.auth.models.User">
+      <point x="-132.5" y="-0.0" />
+      <point x="150.0" y="-0.0" />
+    </edge>
+    <edge source="django.contrib.auth.models.Permission" target="django.contrib.contenttypes.models.ContentType">
+      <point x="176.5" y="-0.0" />
+      <point x="-216.0" y="-0.0" />
+    </edge>
+    <edge source="project.models.Userpro" target="project.models.Project">
+      <point x="110.5" y="-0.0" />
+      <point x="-110.5" y="-0.0" />
+    </edge>
+    <edge source="groups.models.Progroup" target="project.models.Project">
+      <point x="-110.5" y="-0.0" />
+      <point x="110.5" y="-0.0" />
+    </edge>
+    <edge source="project.models.Userpro" target="django.contrib.auth.models.User">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="django.contrib.auth.models.User" target="django.contrib.auth.models.Group">
+      <point x="60.0" y="-15.0" />
+      <point x="780.0" y="280.0" />
+      <point x="-154.5" y="-0.0" />
+    </edge>
+    <edge source="project.models.Userprodetal" target="project.models.Project">
+      <point x="0.0" y="15.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+    <edge source="django.contrib.auth.models.Group" target="django.contrib.auth.models.Permission">
+      <point x="0.0" y="15.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+    <edge source="groups.models.Usrgroup" target="django.contrib.auth.models.User">
+      <point x="-110.5" y="-0.0" />
+      <point x="740.0" y="80.0" />
+      <point x="20.0" y="-15.0" />
+    </edge>
+    <edge source="groups.models.Groupdetails" target="django.contrib.auth.models.User">
+      <point x="-128.0" y="-0.0" />
+      <point x="760.0" y="200.0" />
+      <point x="40.0" y="-15.0" />
+    </edge>
+    <edge source="users.models.profile" target="django.contrib.auth.models.User">
+      <point x="102.0" y="-0.0" />
+      <point x="-150.0" y="-0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="1246.5714285714284" y="282.85714285714283" />
+  <SelectedNodes>
+    <node>groups.models.Progroup</node>
+  </SelectedNodes>
+  <Categories />
+</Diagram>
+
