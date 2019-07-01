@@ -1,55 +1,58 @@
-{%extends "homepage/base.html"%}
-{%block content%}
-{% load crispy_forms_tags %}
-<div class="container">
+{% extends "homepage/base.html" %}
+{% block content %}
+    {% load crispy_forms_tags %}
+    <div class="container">
 
-  <hr>
-  
-  
-  <div class="row justify-content-center">
-  <div class="col-md-6">
-  <div class="card">
-  <header class="card-header">
-    <a href="{% url 'login'%}" class="float-right btn btn-outline-primary mt-1">Log in</a>
-    <h4 class="card-title mt-2">Sign up</h4>
-  </header>
-  <article class="card-body">
-  <form method="post">
-      {% csrf_token %}
-    <div class="form-row">
-      <div class="form-group justify-content-center">
-                 <div class="row">
-      <div class="col-6">
-        {{ form.first_name|as_crispy_field }}
-      </div>
-      <div class="col-6">
-        {{ form.last_name|as_crispy_field }}
-      </div>
+        <hr>
+
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <header class="card-header">
+                        <a href="{% url 'login' %}" class="float-right btn btn-outline-primary mt-1">Log in</a>
+                        <h4 class="card-title mt-2">Sign up</h4>
+                    </header>
+                    <article class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="form-group justify-content-center">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            {{ form.first_name|as_crispy_field }}
+                                        </div>
+                                        <div class="col-6">
+                                            {{ form.last_name|as_crispy_field }}
+                                        </div>
+                                    </div>
+                                    {{ form.username|as_crispy_field }}
+                                    {{ form.email|as_crispy_field }}
+                                    {{ form.password1|as_crispy_field }}
+                                    {{ form.password2|as_crispy_field }}
+                                </div> <!-- form-group end.// -->
+                            </div> <!-- form-row end.// -->
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block"> Register</button>
+                            </div> <!-- form-group// -->
+                            <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our
+                                <br> Terms of use and Privacy Policy.
+                            </small>
+                        </form>
+                    </article> <!-- card-body end .// -->
+                    <div class="border-top card-body text-center">Have an account? <a href="{% url 'login' %}">Log
+                        In</a></div>
+                </div> <!-- card.// -->
+            </div> <!-- col.//-->
+
+        </div> <!-- row.//-->
+
+
     </div>
-    {{ form.username|as_crispy_field }}
-    {{ form.email|as_crispy_field }}
-    {{ form.password1|as_crispy_field }}
-    {{ form.password2|as_crispy_field }}
-      </div> <!-- form-group end.// -->
-    </div> <!-- form-row end.// -->
-      <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-block"> Register  </button>
-      </div> <!-- form-group// -->
-      <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of use and Privacy Policy.</small>
-  </form>
-  </article> <!-- card-body end .// -->
-  <div class="border-top card-body text-center">Have an account? <a href="{% url 'login'%}">Log In</a></div>
-  </div> <!-- card.// -->
-  </div> <!-- col.//-->
-  
-  </div> <!-- row.//-->
-  
-  
-  </div>
-  <!--container end.//-->
-  
-  <br><br>
-<!--
+    <!--container end.//-->
+
+    <br><br>
+    <!--
   <article class="bg-secondary mb-3">
   <div class="card-body text-center">
       <h3 class="text-white mt-3">NerdHerd</h3>
@@ -60,4 +63,4 @@
   <br><br>
   </article>
   -->
-{%endblock content%}
+{% endblock content %}

@@ -1,53 +1,57 @@
-{%extends "homepage/base.html"%}
-{%block content%}
-{% load crispy_forms_tags %}
-<div class="container">
-  <hr>
-  <div class="row justify-content-center">
-  <div class="col-md-6">
-  <div class="card">
-  <header class="card-header">
-    <h4 class="card-title mt-2">Profile</h4>
-  </header>
-  <article class="card-body">
+{% extends "homepage/base.html" %}
+{% block content %}
+    {% load crispy_forms_tags %}
+    <div class="container">
+        <hr>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <header class="card-header">
+                        <h4 class="card-title mt-2">Profile</h4>
+                    </header>
+                    <article class="card-body">
 
-      <div class="media">
-        <img class="rounded-circle account-img mx-auto d-block img-thumbnail"src="{{ user.profile.image.url }}" style="width:200px;height:150px;">
-      </div>
+                        <div class="media">
+                            <img class="rounded-circle account-img mx-auto d-block img-thumbnail"
+                                 src="{{ user.profile.image.url }}" style="width:200px;height:150px;">
+                        </div>
 
-  <form method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
-    <div class="form-row">
-      <div class="form-group justify-content-center">
-                 <div class="row">
-      <div class="col-6">
-        {{ u_form.first_name|as_crispy_field }}
-      </div>
-      <div class="col-6">
-        {{ u_form.last_name|as_crispy_field }}
-      </div>
-    </div>
-    {{ u_form.email|as_crispy_field }}
-    {{ p_form.college|as_crispy_field }}
-    {{ p_form.city|as_crispy_field }}
-    {{ p_form.country|as_crispy_field }}
-    {{ p_form.dob|as_crispy_field }}
-    {{ p_form.image|as_crispy_field }}
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="form-group justify-content-center">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            {{ u_form.first_name|as_crispy_field }}
+                                        </div>
+                                        <div class="col-6">
+                                            {{ u_form.last_name|as_crispy_field }}
+                                        </div>
+                                    </div>
+                                    {{ u_form.email|as_crispy_field }}
+                                    {{ p_form.college|as_crispy_field }}
+                                    {{ p_form.city|as_crispy_field }}
+                                    {{ p_form.country|as_crispy_field }}
+                                    {{ p_form.dob|as_crispy_field }}
+                                    {{ p_form.image|as_crispy_field }}
 
 
+                                </div> <!-- form-group end.// -->
+                            </div> <!-- form-row end.// -->
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block"> Save</button>
+                            </div>
+                            <a href="{% url 'profile' %}">
+                                <button type="button" class="btn btn-primary btn-block">discard</button>
+                            </a>
+                            <!-- form-group// -->
 
-      </div> <!-- form-group end.// -->
-    </div> <!-- form-row end.// -->
-      <div class="form-group" >
-          <button type="submit" class="btn btn-primary btn-block"> Save</button></div>
-          <a href="{%url 'profile'%}" > <button type="button" class="btn btn-primary btn-block">discard</button></a>
-       <!-- form-group// -->
-
-  </form>
-  </article> <!-- card-body end .// -->
-  </div> <!-- col.//-->
-  </div> <!-- row.//-->
-  </div>
-  <!--container end.//-->
-  <br><br>
-{%endblock content%}
+                        </form>
+                    </article> <!-- card-body end .// -->
+                </div> <!-- col.//-->
+            </div> <!-- row.//-->
+        </div>
+        <!--container end.//-->
+    </div>>
+    <br><br>
+{% endblock content %}

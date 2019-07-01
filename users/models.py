@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
 
+
+# Create your models here.
 
 
 class profile(models.Model):
@@ -13,17 +14,13 @@ class profile(models.Model):
     dob = models.DateField(max_length=20, null=True)
     bio = models.TextField(max_length=250, null=True)
 
-
     def __str__(self):
-
-        return f'{self.user.username }profile'
+        return f'{self.user.username}profile'
 
 
 class Friend(models.Model):
     users = models.ManyToManyField(to=User)
     current_user = models.ForeignKey(User, related_name='owner', on_delete=models.CASCADE, null=True)
-
-
 
     @classmethod
     def make_friend(cls, current_user, new_friend):
