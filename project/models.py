@@ -31,7 +31,7 @@ class Userprodetal(models.Model):
 
 #now we have to buid the logic for these models like that of friends
 
-'''
+
     @classmethod
     def start_project(cls, current_project, user):
         project, created = cls.objects.get_or_create(
@@ -39,5 +39,7 @@ class Userprodetal(models.Model):
         )
         Userpro.users.add(user)
 
+
+'''
     
 '''
