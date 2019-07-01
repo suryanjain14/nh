@@ -15,8 +15,14 @@ class Project(models.Model):
 
 
 class Userpro(models.Model):
-    project = models.ManyToManyField(User)
+    user = models.ManyToManyField(User)
     current_project = models.ForeignKey(Project, on_delete=models.CASCADE)
+
+
+class Userprodetal(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    completion = models.BooleanField(default=False)
 
 
 '''
@@ -34,7 +40,3 @@ class Userpro(models.Model):
         )
         project.users.remove(new_friend)
 '''
-
-
-class ProUser(models.Model):
-    completion = models.IntegerField()
