@@ -1,59 +1,63 @@
-{%extends "homepage/base.html"%}
-{%block content%}
+{% extends "homepage/base.html" %}
+{% block content %}
 
-<div class="container">
-  <hr>
+    <div class="container">
+        <hr>
 
-  <div class="row justify-content-center">
-  <div class="col-md-6">
-  <div class="card">
-  <header class="card-header">
-    <h4 class="card-title mt-2">Log In</h4>
-  </header>
-  <article class="card-body">
-  <form class="form-horizontal form" name="LoginForm"  method="post">
-    {% csrf_token %}
-    {% if next %}
-        <input type="hidden" name="next" value="{{ next }}" />
-    {% endif %}
-    <div class="control-group">
-        <label class="control-label" for="username">Username</label>
-        <div class="controls">
-            <input class="form-control" type="text" id="username" name="username"  placeholder="Username">
-        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <header class="card-header">
+                        <h4 class="card-title mt-2">Log In</h4>
+                    </header>
+                    <article class="card-body">
+                        <form class="form-horizontal form" name="LoginForm" method="post">
+                            {% csrf_token %}
+                            {% if next %}
+                                <input type="hidden" name="next" value="{{ next }}"/>
+                            {% endif %}
+                            <div class="control-group">
+                                <label class="control-label" for="username">Username</label>
+                                <div class="controls">
+                                    <input class="form-control" type="text" id="username" name="username"
+                                           placeholder="Username">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="password">Password</label>
+                                <div class="controls">
+                                    <input class="form-control" type="password" name="password" id="password"
+                                           placeholder="Password">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="control-group">
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block"> Log In</button>
+                                </div> <!-- form-group// -->
+                                <div>
+                                    <a class="row justify-content-center" href="{% url 'password_reset' %}">forgot
+                                        password?</a>
+                                </div>
+                        </form>
+
+
+                    </article> <!-- card-body end .// -->
+                    <div class="border-top card-body text-center">Doesn't have an account? <a href="{% url 'signup' %}">Sign
+                        Up</a></div>
+                </div> <!-- card.// -->
+            </div> <!-- col.//-->
+
+        </div> <!-- row.//-->
+
+
     </div>
+    <!--container end.//-->
 
-    <div class="control-group">
-        <label class="control-label" for="password">Password</label>
-        <div class="controls">
-            <input class="form-control" type="password" name="password" id="password" placeholder="Password">
-        </div>
-  </div><br>
-  <div class="control-group">
-
-      <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-block"> Log In  </button>
-      </div> <!-- form-group// -->
-      <div>
-          <a class="row justify-content-center" href="{%url 'password_reset'%}">forgot password?</a>
-      </div>
-  </form>
-
-
-
-  </article> <!-- card-body end .// -->
-  <div class="border-top card-body text-center">Doesn't have an account? <a href="{%url 'signup' %}">Sign Up</a></div>
-  </div> <!-- card.// -->
-  </div> <!-- col.//-->
-
-  </div> <!-- row.//-->
-
-
-  </div>
-  <!--container end.//-->
-
-  <br><br>
-<!--
+    <br><br>
+    <!--
   <article class="bg-secondary mb-3">
   <div class="card-body text-center">
       <h3 class="text-white mt-3">NerdHerd</h3>
@@ -64,4 +68,4 @@
   <br><br>
   </article>
   -->
-{%endblock content%}
+{% endblock content %}

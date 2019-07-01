@@ -1,39 +1,41 @@
 {% extends "homepage/base.html" %}
 
- {% block content %}
-<style>
+{% block content %}
+    <style>
 
-    body {
-        font-family: "Roboto", sans-serif;
-        font-size: 18px;
-        background-color: #fdfdfd;
-    }
-    .head_text{
-    color: white;
-  }
-    .card{
-    box-shadow: 0 16px 48px #E3E7EB;
-}
-</style>
-            <div class="container">
-                <h2> </h2>
-                <div class="row">
+        body {
+            font-family: "Roboto", sans-serif;
+            font-size: 18px;
+            background-color: #fdfdfd;
+        }
 
-              <!-- Blog Entries Column -->
-              <div class="col-md-8 mt-3 left">
-                    {% for post in post_list %}
-                <div class="card mb-4" >
-                  <div class="card-body">
-                    <h2 class="card-title">{{ post.title }}</h2>
-                    <p class="card-text text-muted h6">{{ post.Author }} | {{ post.created_on}} </p>
+        .head_text {
+            color: white;
+        }
 
-                    <p class="card-text">{{post.content|slice:":200" }}</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
-                  </div>
+        .card {
+            box-shadow: 0 16px 48px #E3E7EB;
+        }
+    </style>
+    <div class="container">
+        <h2></h2>
+        <div class="row">
 
-                </div>
+            <!-- Blog Entries Column -->
+            <div class="col-md-8 mt-3 left">
+                {% for post in post_list %}
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ post.title }}</h2>
+                            <p class="card-text text-muted h6">{{ post.Author }} | {{ post.created_on }} </p>
+
+                            <p class="card-text">{{ post.content|slice:":200" }}</p>
+                            <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read More &rarr;</a>
+                        </div>
+
+                    </div>
                 {% endfor %}
             </div>
-            </div>
         </div>
-{%endblock%}
+    </div>
+{% endblock %}

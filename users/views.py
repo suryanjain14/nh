@@ -1,34 +1,34 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from.forms import user,userupdateform, profileupdateform #,login
+from .forms import user, userupdateform, profileupdateform  # ,login
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from nh import settings
 from django.contrib.auth.models import User
-from . models import Friend
+from .models import Friend
 from project.models import Project
+
 
 # Create your views here.
 def register(request):
-
     if request.method == "POST":
         form = user(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
             email = form.cleaned_data.get('email')
-            subject='Thankyou for registering on NerdHerd!!'
-            message='Welcome to NerdHerd,We very much appreciate your response'
-            from_email=settings.EMAIL_HOST_USER
-            to_list=[email]
-            send_mail(subject,message,from_email,to_list,fail_silently=True)
+            subject = 'Thankyou for registering on NerdHerd!!'
+            message = 'Welcome to NerdHerd,We very much appreciate your response'
+            from_email = settings.EMAIL_HOST_USER
+            to_list = [email]
+            send_mail(subject, message, from_email, to_list, fail_silently=True)
             messages.success(request, f'{username} Account created!')
             return redirect('home')
     else:
         form = user
 
-    return render(request,'user/reg.html',{'form':form})
+    return render(request, 'user/reg.html', {'form': form})
 
 
 """def login(request):
@@ -44,6 +44,8 @@ def register(request):
 
     return render(request,'user/login.html',{'form':form})
 """
+
+
 @login_required
 def profile(request):
     return render(request, 'user/profile.html')
@@ -68,7 +70,7 @@ def profileupdate(request):
         'u_form': u_form,
         'p_form': p_form
     }
-    return render(request, 'user/profileupdate.html',context)
+    return render(request, 'user/profileupdate.html', context)
 
 
 @login_required()
@@ -77,18 +79,17 @@ def db(request):
     friend = Friend.objects.get(current_user=request.user)
     friends = friend.users.all()
     projects = Project.objects.all()
-    arg = {'users': users, 'friends': friends,'projects': projects}
+    arg = {'users': users, 'friends': friends, 'projects': projects}
     return render(request, 'user/db.html', arg)
 
 
-def profile_with_pk(request,pk):
-
+def profile_with_pk(request, pk):
     user = User.objects.get(pk=pk)
     arg = {'user': user}
     return render(request, 'user/profile.html', arg)
 
 
-def friend(request,operation, pk):
+def friend(request, operation, pk):
     new_friend = User.objects.get(pk=pk)
     if operation == 'add':
         Friend.make_friend(request.user, new_friend)
