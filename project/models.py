@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+
 # Create your models here.
 
 
@@ -16,30 +17,41 @@ class Project(models.Model):
 
 
 class Userpro(models.Model):
-    # this model define just many to many relationship of user with project
+    # this model define just many to many relationship of user with project and details of that project for the user
 
-    user = models.ManyToManyField(User)
-    current_project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    project = models.ManyToManyField(Project)
+    current_user = models.ForeignKey(User, on_delete=models.CASCADE)
+    completion = models.IntegerField(default=0)
+
+    # now we have to buid the logic for these models like that of friends
+    @classmethod
+    def start_project(cls, current_user, new_project):
+        projectobj, created = cls.objects.get_or_create(
+            current_user=current_user
+        )
+        projectobj.project.add(new_project)
+
+    def __str__(self):
+        return f'{self.current_user} projects'
 
 
-class Userprodetal(models.Model):
-    # this model define the details of prject given to a particular user like how much project user has completed
+class Pro_stat(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     completion = models.IntegerField(default=0)
 
+    class Meta:
+        unique_together = (("user", "project"),)
 
-#now we have to buid the logic for these models like that of friends
+    def __str__(self):
+        return f'{self.user}_{self.project}_stat'
 
 
-    @classmethod
-    def start_project(cls, current_project, user):
-        project, created = cls.objects.get_or_create(
-            current_project=current_project
-        )
-        Userpro.users.add(user)
 
 
 '''
-    
+bhai log ek signal banana hai jo ki new project start karne par matlab 
+userpro mai save() ya many to many field ke change hone par active ho
+aur Pro_stat ke models mai user aur project ke column mai data dale
+
 '''
