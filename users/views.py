@@ -7,7 +7,7 @@ from django.core.mail import send_mail
 from nh import settings
 from django.contrib.auth.models import User
 from .models import Friend
-from project.models import Project
+from project.models import Project, ProTags
 
 
 # Create your views here.
@@ -79,7 +79,9 @@ def db(request):
     friend = Friend.objects.get(current_user=request.user)
     friends = friend.users.all()
     projects = Project.objects.all()
-    arg = {'users': users, 'friends': friends, 'projects': projects}
+    protags = ProTags.objects.all()
+
+    arg = {'users': users, 'friends': friends, 'projects': projects, 'protags': protags}
     return render(request, 'user/db.html', arg)
 
 

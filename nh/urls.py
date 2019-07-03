@@ -21,6 +21,7 @@ from django.contrib.auth import views as auth
 from users.forms import login
 from django.conf import settings
 from django.conf.urls.static import static
+from project import views as pv
 from news_update import urls
 
 # from  user import forms
@@ -49,6 +50,7 @@ urlpatterns = [
     path('db/add/', uv.add, name='add'),
     path('db/remove/', uv.remove, name='remove'),
     path('event/', include('news_update.urls'), name='event'),
+    path('project/', pv.project)
 
 ]
 
