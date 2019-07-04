@@ -7,7 +7,7 @@ from django.core.mail import send_mail
 from nh import settings
 from django.contrib.auth.models import User
 from .models import Friend
-from project.models import Project, ProTags
+from project.models import Project, ProTags ,Userpro
 
 
 # Create your views here.
@@ -76,12 +76,19 @@ def profileupdate(request):
 @login_required()
 def db(request):
     users = User.objects.all().order_by('username')
-    friend = Friend.objects.get(current_user=request.user)
-    friends = friend.users.all()
+
     projects = Project.objects.all()
     protags = ProTags.objects.all()
+    try:
+        friend = Friend.objects.get(current_user=request.user)
+        friends = friend.users.all()
+        allpro = Userpro.objects.get(current_user=request.user)
+        userprojects = allpro.project.all()
+    except:
+        userprojects = None
+        friends =None
 
-    arg = {'users': users, 'friends': friends, 'projects': projects, 'protags': protags}
+    arg = {'users': users, 'friends': friends, 'projects': projects, 'protags': protags,'userprojects' : userprojects}
     return render(request, 'user/db.html', arg)
 
 

@@ -50,7 +50,9 @@ urlpatterns = [
     path('db/add/', uv.add, name='add'),
     path('db/remove/', uv.remove, name='remove'),
     path('event/', include('news_update.urls'), name='event'),
-    path('project/', pv.project)
+    path('project/', pv.project),
+    path(r'db/start/(?P<pk>.+)/starting',pv.prostart,name ='startproject')
+
 
 ]
 
