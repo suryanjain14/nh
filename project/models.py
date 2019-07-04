@@ -27,7 +27,7 @@ class Userpro(models.Model):
     # this model define just many to many relationship of user
 
     project = models.ManyToManyField(Project)
-    current_user = models.ForeignKey(User, on_delete=models.CASCADE)
+    current_user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
 
 
     # now we have to buid the logic for these models like that of friends

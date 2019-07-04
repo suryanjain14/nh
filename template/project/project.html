@@ -18,7 +18,17 @@
                 </div>
             </div>
             <br>
-            <a href="#" class="btn btn-primary">Start</a>
+        {% if userprojects %}
+            {%if project not in userprojects  %}
+                <a href="{% url 'startproject'  pk=project.pk %}"class="btn btn-primary">Start</a>
+            {% else %}
+            <a href="#"class="btn btn-outline-primary">Stop</a>
+            {% endif %}
+        {% else %}
+
+            <a href="{% url 'startproject'  pk=project.pk %}"class="btn btn-primary">Start</a>
+        {% endif %}
+
         </div>
     </div>
 {% endfor %}
