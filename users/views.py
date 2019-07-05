@@ -75,6 +75,7 @@ def profileupdate(request):
     return render(request, 'user/profileupdate.html', context)
 
 
+# kasdhkhksjahk
 @login_required()
 def db(request):
     users = User.objects.all().order_by('username')
