@@ -8,7 +8,8 @@ from nh import settings
 from django.contrib.auth.models import User
 from .models import Friend
 from project.models import Project, ProTags ,Userpro
-
+# from groups.models import Groupdetails,Usrgroup,Progroup
+from groups.models import Group
 
 # Create your views here.
 def register(request):
@@ -31,7 +32,8 @@ def register(request):
     return render(request, 'user/reg.html', {'form': form})
 
 
-"""def login(request):
+"""
+def login(request):
     if request.method == "POST":
         form = login(request.POST)
         if form.is_valid():
@@ -82,13 +84,34 @@ def db(request):
     try:
         friend = Friend.objects.get(current_user=request.user)
         friends = friend.users.all()
+    except:
+        friends = None
+
+    try:
         allpro = Userpro.objects.get(current_user=request.user)
         userprojects = allpro.project.all()
+
     except:
         userprojects = None
-        friends =None
+    '''
+    try:
+        allgroups = Groupdetails.objects.all()
 
-    arg = {'users': users, 'friends': friends, 'projects': projects, 'protags': protags,'userprojects' : userprojects}
+
+
+    except:
+        current_user_group = None
+'''
+
+    try:
+        group = Group.objects.all()
+        cugroup = Group
+
+
+    except:
+        group = None
+
+    arg = {'users': users, 'friends': friends, 'projects': projects, 'protags': protags, 'userprojects': userprojects,'group':group, }
     return render(request, 'user/db.html', arg)
 
 
