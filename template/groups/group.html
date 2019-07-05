@@ -1,0 +1,18 @@
+<div class="card-body" style="height:250px;overflow:auto;">
+    <header>
+        <h5 class="card-title">Group</h5>
+    </header>
+
+{% for groups in group  %}
+    {% for user in groups.users.all %}
+        {% if user == request.user %}
+            <!--      <a href=""></a>-->
+            <h4>{{groups}}</h4>
+        {% endif  %}
+
+{% endfor %}
+{% endfor %}
+
+    <a href="#" class="card-link">Join</a>
+    <a href="#" class="card-link">Create</a>
+</div>
