@@ -23,6 +23,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from project import views as pv
 from news_update import urls
+from mtteam import views as mtt
 
 # from  user import forms
 urlpatterns = [
@@ -52,6 +53,7 @@ urlpatterns = [
     path('event/', include('news_update.urls'), name='event'),
     path('project/', pv.project),
     path('db/start/<pk>/starting', pv.prostart, name='startproject'),
+    path('abt/', mtt.meet)
 
 
 ]
