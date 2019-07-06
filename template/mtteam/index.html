@@ -1,0 +1,80 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block content %}
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,600|Montserrat:300,300i,400,400i,500,500i,600,600i,700|Ubuntu:300,300i,400,400i,500,500i,700"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'mtt/mtt.css' %}">
+
+    <body background="{% static 'mtt/images/bjnh.jpg' %}">
+    <div class="heading"></div>
+    <div><br><br><br><br><br><br></div>
+    <div class="cards-wrapper">
+        <div class="card">
+            <img src="{% static 'mtt/images/img-top1.jpg' %}" class="image-top">
+            <img src="{% static 'mtt/images/img1.jpg' %}" class="profile-image">
+            <h1 class="fullname">Suryan Jain</h1>
+            <p class="job">Lead Developer</p>
+            <p class="about-me">"I am a mota baccha and a lead developer(that thing abt lead developer anmol told me
+                this :) )"</p>
+            <button type="button">Explore Me</button>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+        <div class="card">
+            <img src="{% static 'mtt/images/img-top2.jpeg' %}" class="image-top">
+            <img src="{% static 'mtt/images/img2.jpg' %}" class="profile-image">
+            <h1 class="fullname">Yash Goswami</h1>
+            <p class="job">Lead Developer</p>
+            <p class="about-me">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed natus illum expedita, at
+                distinctio nesciunt."</p>
+            <button type="button">Explore Me</button>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+        <div class="card">
+            <img src="{% static 'mtt/images/img-top3.jpg' %}" class="image-top">
+            <img src="{% static 'mtt/images/img3.jpg' %}" class="profile-image">
+            <h1 class="fullname">Varun Bhalla</h1>
+            <p class="job">Web Developer</p>
+            <p class="about-me">"I am passionate about web and mobile development. Curruntly pursuing Integrated
+                MTech(Information Technology) from DAVV, Indore."</p>
+            <button type="button">Explore Me</button>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+        <div class="card">
+            <img src="{% static 'mtt/images/img-top4.jpg' %}" class="image-top">
+            <img src="{% static 'mtt/images/img4.jpg' %}" class="profile-image">
+            <h1 class="fullname">Anmol Pal</h1>
+            <p class="job">Web Developer</p>
+            <p class="about-me">"Currently a student of Information Technology in IIPS-DAVV, Indore. Web developer and
+                Machine Learning enthusiast."</p>
+            <button type="button">Explore Me</button>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+
+    <script src="{% static 'mtt/app.js' %}"></script>
+    </body>
+{% endblock content %}

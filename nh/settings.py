@@ -36,6 +36,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'homepage',
+    'mtteam',
     'project',
     'users',
     'groups',
