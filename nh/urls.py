@@ -53,7 +53,7 @@ urlpatterns = [
     path('event/', include('news_update.urls'), name='event'),
     path('project/', pv.project),
     path('db/start/<pk>/starting', pv.prostart, name='startproject'),
-    path('abt/', mtt.meet),
+    path('abt/', mtt.meet, name='mtt'),
     path('', include('groups.url')),
 
 
