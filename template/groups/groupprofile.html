@@ -222,26 +222,10 @@
             <div class="col-lg-4 order-lg-1 text-center">
                 <img src="{{ group.image.url }}" class="mx-auto img-fluid img-circle d-block" alt="avatar">
                 <h6 class="mt-2">{{ group.name }}</h6>
-
-                <div class="btn-info btn">
-                    <style>
-                        div {
-                            position: relative;
-                            overflow: hidden;
-                        }
-
-                        input {
-                            position: absolute;
-                            font-size: 50px;
-                            opacity: 0;
-                            right: 0;
-                            top: 0;
-                        }
-                    </style>
-
-                    Change
-                    <input type="file" name="file"/>
-                </div>
+                <label class="custom-file ">
+                    <input type="file" id="file" class="custom-file-input">
+                    <span class="custom-file-control btn-info btn">Choose file</span>
+                </label>
             </div>
         </div>
     </div>
