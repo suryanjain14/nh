@@ -1,0 +1,70 @@
+{% extends "homepage/base.html" %}
+{% block content %}
+    {% load crispy_forms_tags %}
+
+    <br>
+    <div class="container-fluid gedf-wrapper">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="h5">@{{ group.username }}</div>
+                        <div class="h7 text-muted">Admin: <b>{{ group.admin }}</b>></div>
+                        <div class="h7 text-muted">About:</div>
+                        <div class="h7">{{ group.bio }}</div>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="h6 text-muted">Followers</div>
+                            <div class="h5">52342</div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="h6 text-muted">Following</div>
+                            <div class="h5">6758</div>
+                        </li>
+                        {% if group.admin == request.user %}
+                            <li class="list-group-item"><a href="{% url 'groupprofile' pk=group.id %}">
+                                Settings
+                            </a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 gedf-main">
+                {% include 'project/project.html' %}
+
+
+            </div>
+            <div class="col-md-3">
+                <div class="card gedf-card">
+                    <div class="card-body" style="height:250px;overflow:auto;">
+                        <header>
+                            <h5 class="card-title">Users</h5>
+                        </header>
+                        {% for user in group.users.all %}
+                            <a href="{% url 'view_profile' pk=user.pk %}">
+                                <h4>{{ user.username }}</h4>
+                            </a>
+                        {% endfor %}
+                        <a href="#add" class="card-link">Add</a>
+                        <a href="#remove" class="card-link">Remove</a>
+                    </div>
+                </div>
+                <div class="card gedf-card">
+
+                    <div class="card-body" style="height:250px;overflow:auto;">
+                        <h5 class="card-title">kuch to bhi</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="#" class="card-link">Join</a>
+                        <a href="#" class="card-link">Create</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

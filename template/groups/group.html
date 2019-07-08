@@ -3,11 +3,12 @@
         <h5 class="card-title">Group</h5>
     </header>
 
-{% for groups in group  %}
+    {% for groups in group %}
     {% for user in groups.users.all %}
         {% if user == request.user %}
-            <!--      <a href=""></a>-->
+            <a href="{% url 'groupdb' pk=groups.pk %}">
             <h4>{{groups}}</h4>
+            </a>
         {% endif  %}
 
 {% endfor %}
