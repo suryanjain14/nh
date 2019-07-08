@@ -23,12 +23,9 @@
                             <div class="col-md-6">
                                 <h6>About</h6>
                                 <p>
-                                    Web Designer, UI/UX Engineer
+                                    {{ group.bio }}
                                 </p>
-                                <h6>Hobbies</h6>
-                                <p>
-                                    Indie music, skiing and hiking. I love the great outdoors.
-                                </p>
+
                             </div>
                             <div class="col-md-6">
                                 <h6>Recent badges</h6>
@@ -223,12 +220,28 @@
                 </div>
             </div>
             <div class="col-lg-4 order-lg-1 text-center">
-                <img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
-                <h6 class="mt-2">Upload a different photo</h6>
-                <label class="custom-file">
-                    <input type="file" id="file" class="custom-file-input">
-                    <span class="custom-file-control">Choose file</span>
-                </label>
+                <img src="{{ group.image.url }}" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+                <h6 class="mt-2">{{ group.name }}</h6>
+
+                <div class="btn-info btn">
+                    <style>
+                        div {
+                            position: relative;
+                            overflow: hidden;
+                        }
+
+                        input {
+                            position: absolute;
+                            font-size: 50px;
+                            opacity: 0;
+                            right: 0;
+                            top: 0;
+                        }
+                    </style>
+
+                    Change
+                    <input type="file" name="file"/>
+                </div>
             </div>
         </div>
     </div>

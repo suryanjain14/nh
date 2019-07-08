@@ -8,5 +8,7 @@ def groupdb(request, pk):
     return render(request, 'groups/groupdb.html', arg)
 
 
-def groupprofile(request):
-    return render(request, 'groups/groupprofile.html')
+def groupprofile(request, pk):
+    group = Group.objects.get(pk=pk)
+    arg = {'group': group}
+    return render(request, 'groups/groupprofile.html', arg)
