@@ -150,5 +150,17 @@
             </div>
         </div>    <!-- End Of Row -->
     </div>
+
+    <div class="container">
+        {% if messages %}
+
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+    </div>
 {% endblock content %}
 
