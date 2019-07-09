@@ -56,7 +56,6 @@ urlpatterns = [
     path('abt/', mtt.meet, name='mtt'),
     path('', include('groups.url')),
 
-
 ]
 
 if settings.DEBUG:
