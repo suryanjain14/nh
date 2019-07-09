@@ -19,7 +19,7 @@ def groupprofile(request, pk):
             gform.save()
             return redirect('groupprofile')
     else:
-        gform = groupedit(request.POST, instance=request.user)
+        gform = groupedit(request.POST, pk)
 
     arg = {'group': group, 'form': gform}
     return render(request, 'groups/groupprofile.html', arg)

@@ -18,8 +18,10 @@ class groupedit(forms.ModelForm):
     entrykey = forms.IntegerField()
 
     def __init__(self, *args, **kwargs):
-        self.admin = forms.ModelChoiceField(queryset=Group.objects.get(pk=pk))
+        pk = int(args[1])
+        self.admin = forms.ModelChoiceField(queryset=Group.objects.filter(pk=pk))
+        super(groupedit, self).__init__(*args, **kwargs)
 
     class Meta:
-        model = Group.objects
+        model = Group
         fields = {'image', 'name', 'bio', 'status', 'admin'}
