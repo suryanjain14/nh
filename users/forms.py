@@ -6,7 +6,7 @@ from .models import profile
 
 
 class user(UserCreationForm):
-    email = forms.EmailField(widget=forms.TextInput(
+    email = forms.EmailField(widget=forms.EmailInput(
         attrs={'class': 'form-control form-control needs-validation', 'placeholder': 'Enter email'}))
     first_name = forms.CharField(widget=forms.TextInput(
         attrs={'class': 'form-inline form-control needs-validation ', 'placeholder': 'First Name'}))
