@@ -75,10 +75,11 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#events">Events</a>
+                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'mtt' %}">Contact</a>
+                <a class="nav-link" href="{% url 'mtt' %}">About</a>
             </li>
 
 
@@ -88,7 +89,7 @@
                     <a href="{% url 'home1' %}" class="nav-link">News</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'db' %}">{{ user.username }}</a>
+                    <a class="nav-link" href="{% url 'db' %}">{{user.username}}</a>
                 </li>
                 <li class="nav-item ">
                     <a href="{% url 'logout' %}" class="nav-link">Logout</a>
