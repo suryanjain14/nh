@@ -20,7 +20,7 @@ body {
 .navbar {
 	text-transform: uppercase;
 	font-weight: 700;
-	font-size: .9rem;
+	font-size: .8rem;
 	letter-spacing: .1rem;
 	background: rgba(0, 0, 0, .7)!important;
 }
