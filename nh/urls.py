@@ -40,7 +40,7 @@ urlpatterns = [
     path('project/', pv.project),
     path('db/start/<pk>/starting', pv.prostart, name='startproject'),
     path('abt/', mtt.meet, name='mtt'),
-    path('group/', include('groups.urls')),
+    path('groups/', include('groups.urls')),
     path('contact us/',include('contact.urls')),
 
 
