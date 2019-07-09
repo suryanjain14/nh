@@ -1,51 +1,43 @@
-<!DOCTYPE html>
-<html lang="en" >
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <<meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact-Us Page </title>
-    <link  href="http://fonts.googleapis.com/css?family=Quicksand:300,400,500,700"
-    rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="nav">
-          <div class="left">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Resource</a></li>
-              <li><a href="#">News</a></li>
-            </ul>
-          </div>
-          <div class="right">
-            <ul>
-              <li><a href="#">Log In</a></li>
-              <li><a href="#">Sign Up</a></li>
-
-            </ul>
-          </div>
-      </div>
-      <div class="header">
-        <h1>Contact Us</h1>
-        <p>COME,COLLAB,LEARN</p>
-        <p>Please suggest us how we can improve.Kindly send all queries , suggestion and feedback and make us better. </p>
-      </div>
 
 
-      <div class="form">
-        <form>
-          <input type="text" placeholder="Name"/>
-          <input type="text" placeholder="E-Mail"/>
-          <input type="text" id="msg" placeholder="Message"/>
-        </form>
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block content %}
 
-        <button type="button" >Let's Talk</button>
-      </div>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,600|Montserrat:300,300i,400,400i,500,500i,600,600i,700|Ubuntu:300,300i,400,400i,500,500i,700"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'contact/Style.css' %}">
 
-
+    <body style="background-image:url({% static 'contact/images/BG.jpg' %});width:100%;">
+     <div><br><br><br><br><br><br><br><br><br><br></div>
+    <div class="header" style="  text-align: center;position: absolute;top: 30%;left: 50%;transform: translate(-50%,-50%);">
+                  <br><br><br><br><br><br>
+                <h1 style="font-size:36px;">Contact Us</h1>
+          <p style="color: #fff;font-size:30px;margin-bottom: 20px;font-weight: 600;">COME,COLLAB,LEARN</p>
+          <p style="font-size:22px;">Please suggest us how we can improve.Kindly send all queries , suggestion and feedback and make us better. </p>
 
     </div>
-  </body>
-</html>
+    <div><br><br><br><br><br><br></div>
+
+        <div class="form" style="position: absolute;top: 75%;left: 50%;transform: translate(-50%,-50%);text-align: center;font-size: 12px;font-weight: bold;">
+            <div><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+          <form>
+             <div><br><br><br><br><br><br></div>
+            <input type="text" placeholder=" Name" style="width: 100%;margin: 20px 0;background: rgba(0, 0, 0, 0);border: none;font-size: 30px;border-bottom: 1px solid #0078ff;color: #fff;">
+
+            <input type="text" placeholder=" E-Mail"  style="width: 100%;margin: 20px 0;background: rgba(0, 0, 0, 0);border: none;font-size: 30px;border-bottom: 1px solid #0078ff;color: #fff;">
+
+            <input type="text" id="msg" placeholder=" Message"  style="width: 100%;margin: 20px 0;background: rgba(0, 0, 0, 0);border: none;font-size: 30px;border-bottom: 1px solid #0078ff;color: #fff;">
+
+          </form>
+            <br><br><br>
+          <button type="button" >Let's Talk</button>
+          <br><br><br><br><br><br><br>
+        </div>
+
+
+
+
+      <br><br><br><br><br><br><br>
+    </body>
+{% endblock content %}
