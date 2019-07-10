@@ -5,39 +5,58 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,600|Montserrat:300,300i,400,400i,500,500i,600,600i,700|Ubuntu:300,300i,400,400i,500,500i,700"
           rel="stylesheet">
     <link rel="stylesheet" href="{% static 'contact/Style.css' %}">
-    <div class="container-fluid">
-        <div class="contbody">
-            <div><br><br><br><br><br><br><br><br><br><br></div>
-    <div class="header" style="  text-align: center;position: absolute;top: 30%;left: 50%;transform: translate(-50%,-50%);">
-                  <br><br><br><br><br><br>
-                <h1 style="font-size:36px;">Contact Us</h1>
-          <p style="color: #fff;font-size:30px;margin-bottom: 20px;font-weight: 600;">COME,COLLAB,LEARN</p>
-          <p style="font-size:22px;">Please suggest us how we can improve.Kindly send all queries , suggestion and feedback and make us better. </p>
 
-    </div>
-    <div><br><br><br><br><br><br></div>
+
+    <div class="contbody">
+        <div class="container-fluid">
+            <div class="header"
+                 style="  text-align: center;position: absolute;top: 30%;left: 50%;transform: translate(-50%,-50%);">
+
+                <h1 style="font-size:36px;">Contact Us</h1>
+                <p style="color: #fff;font-size:30px;margin-bottom: 20px;font-weight: 600;">COME,COLLAB,LEARN</p>
+                <p style="font-size:22px;">Please suggest us how we can improve.Kindly send all queries , suggestion and
+                    feedback and make us better. </p>
+
+            </div>
+
 
             <div class="form">
                 <!-- style="position: absolute;top: 75%;left: 50%;transform: translate(-50%,-50%);text-align: center;font-size: 12px;font-weight: bold;"-->
 
-            <div><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
-          <form>
-             <div><br><br><br><br><br><br></div>
-            <input type="text" value="{{u_form.first_name}} {{u_form.last_name}}" style="width: 100%;margin: 20px 0;background: rgba(0, 0, 0, 0);border: none;font-size: 30px;border-bottom: 1px solid #0078ff;color: #fff;">
+                <div class="row text-center">
+                    <form>
 
-            <input type="text" value=" {{u_form.email}}"  style="width: 100%;margin: 20px 0;background: rgba(0, 0, 0, 0);border: none;font-size: 30px;border-bottom: 1px solid #0078ff;color: #fff;">
+                        <input type="text" value="{{ u_form.first_name }} {{ u_form.last_name }}"
+                               style="text-align: center; width: 100%;margin: 20px 0;background: rgba(0, 0, 0, 0);border: none;font-size: 30px;border-bottom: 1px solid #0078ff;color: #fff;">
 
-            <input type="text" id="msg" placeholder=" Message"  style="width: 100%;margin: 20px 0;background: rgba(0, 0, 0, 0);border: none;font-size: 30px;border-bottom: 1px solid #0078ff;color: #fff;">
+                        <input type="text" value=" {{ u_form.email }}"
+                               style="text-align: center; width: 100%;margin: 20px 0;background: rgba(0, 0, 0, 0);border: none;font-size: 30px;border-bottom: 1px solid #0078ff;color: #fff;">
 
-          </form>
+                        <input type="text" id="msg" placeholder=" Message"
+                               style="text-align: center; width: 100%;margin: 20px 0;background: rgba(0, 0, 0, 0);border: none;font-size: 30px;border-bottom: 1px solid #0078ff;color: #fff;">
+
+                    </form>
+
+                </div>
+                <div class="row text-center">
+                    <br>
+
+                </div>
 
 
-                <br><br><br>
+                <div class="row text-center">
+                    <div class="col-md">
+                    </div>
+                    <div class="col-md">
                 <button type="button" class="btn-primary btn">Let's Talk</button>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        </div>
+                    </div>
+                    <div class="col-md">
+
+                    </div>
+                </div>
+            </div>
 
 
         </div>
-    </div>>
+    </div>
 {% endblock content %}
