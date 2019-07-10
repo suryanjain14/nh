@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'project',
     'users',
     'groups',
+    'news_update',
     'django.contrib.admin',
     'django.contrib.auth',
     'crispy_forms',
@@ -47,7 +48,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'news_update',
     'contact.apps.ContactConfig',
 
 ]
