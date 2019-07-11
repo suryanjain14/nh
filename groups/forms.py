@@ -17,11 +17,24 @@ class groupedit(forms.ModelForm):
 
     entrykey = forms.IntegerField()
 
-    def __init__(self, *args, **kwargs):
-        pk = int(args[1])
-        self.admin = forms.ModelChoiceField(queryset=Group.objects.filter(pk=pk))
-        super(groupedit, self).__init__(*args, **kwargs)
-
     class Meta:
         model = Group
+
         fields = {'image', 'name', 'bio', 'status', 'admin'}
+
+    '''
+    def __init__(self, user, *args, **kwargs):
+        temp = user
+        groups =Group.objects.all()
+        for group in groups:
+            grp1 = group.users.all()
+            print('wlkahdkhskajhdkjshajk')
+            print(grp1)
+            for user in grp1:
+                if user == temp:
+                    id = group.id
+
+        group = Group.objects.filter(pk=id)
+        self.admin = forms.ModelChoiceField(queryset=group.users)
+        super(groupedit, self).__init__(*args, **kwargs)
+'''

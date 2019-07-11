@@ -11,15 +11,19 @@ def groupdb(request, pk):
 
 def groupprofile(request, pk):
     group = Group.objects.get(pk=pk)
-    pk = pk
 
+    # groups = Group.objects.all()
+    # for group in groups:
+    #    for user in group.users.all:
+    #       if user == request.user:
+    #          user
     if request.method == 'POST':
-        gform = groupedit(request.POST, pk)
+        gform = groupedit(request.POST)  # ,request.user)
         if gform.is_valid():
             gform.save()
-            return redirect('groupprofile')
+
     else:
-        gform = groupedit(request.POST, pk)
+        gform = groupedit(request.POST)  #,request.user)
 
     arg = {'group': group, 'form': gform}
     return render(request, 'groups/groupprofile.html', arg)
