@@ -13,7 +13,7 @@ class user(UserCreationForm):
     last_name = forms.CharField(widget=forms.TextInput(
         attrs={'class': ' form-inline form-control needs-validation', 'placeholder': 'Last Name'}))
     username = forms.CharField(widget=forms.TextInput(
-        attrs={'class': 'form-group form-control needs-validation needs-validation', 'placeholder': 'Last Name'}))
+        attrs={'class': 'form-group form-control needs-validation needs-validation', 'placeholder': 'Username'}))
     password1 = forms.CharField(label=("Password"), widget=forms.PasswordInput(
         attrs={'class': 'form-group form-control needs-validation', 'placeholder': 'Enter Password'}))
     password2 = forms.CharField(label=("Password confirmation"), widget=forms.PasswordInput(
@@ -26,7 +26,7 @@ class user(UserCreationForm):
 
 class login(LoginView):
     username = forms.CharField(widget=forms.TextInput(
-        attrs={'class': 'form-group form-control needs-validation needs-validation', 'placeholder': 'Last Name'}))
+        attrs={'class': 'form-group form-control needs-validation needs-validation', 'placeholder': 'Username'}))
     password = forms.CharField(label=("Password"), widget=forms.PasswordInput(
         attrs={'class': 'form-group form-control needs-validation', 'placeholder': 'Enter Password'}))
 
