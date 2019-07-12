@@ -24,6 +24,23 @@ class Group(models.Model):
     def __str__(self):
         return f'{self.name }'
 
+
+class GroupAdmin(models.Model):
+    group = models.OneToOneField(Group, on_delete=models.CASCADE)
+    admin = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+
+
+class Groupuser(models.Model):
+    user = models.ManyToManyField(User)
+    current_group = models.ForeignKey(Group, on_delete=models.CASCADE)
+
+
+class Groupprojects(models.Model):
+    project = models.ManyToManyField(Project)
+    current_group = models.ForeignKey(Group, on_delete=models.CASCADE)
+
+
+
 '''
 class Usrgroup(models.Model):
 
