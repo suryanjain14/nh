@@ -12,6 +12,9 @@
       </configuration>
     </facet>
   </component>
+  <component name="Flask">
+    <option name="enabled" value="false" />
+  </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
@@ -19,6 +22,11 @@
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/template" />
+      </list>
+    </option>
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="Twisted Trial" />
