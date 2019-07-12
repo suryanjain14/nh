@@ -9,8 +9,8 @@ class profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='ppic.jpg', upload_to='ppic/')
     city = models.CharField(max_length=20, null=True, default='Indore')
-    country = models.CharField(max_length=20, null=True, default='Indiaa')
-    college = models.CharField(max_length=20, null=True, default='IIPS')
+    country = models.CharField(max_length=20, null=True, default='India')
+    college = models.CharField(max_length=20, null=True, default='')
     dob = models.DateField(max_length=20, null=True)
     bio = models.TextField(max_length=250, null=True)
 
