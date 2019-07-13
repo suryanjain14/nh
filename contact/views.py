@@ -16,7 +16,7 @@ def cont(request):
 
 
             subject = 'Thankyou for registering on NerdHerd!!'
-            message = 'this is message'
+            message = 'this is messages'
             from_email = [u_form.email]
             to_list = ['nerdherdindore@gmail.com']
             send_mail(subject, message, from_email, to_list, fail_silently=True)
