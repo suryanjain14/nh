@@ -1,7 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
-# Create your models here.
+
+
+
 
 
 class Project(models.Model):
@@ -22,6 +26,20 @@ class ProTags(models.Model):
 
     def __str__(self):
         return f'{self.project}'
+
+
+
+@receiver(post_save, sender=Project)
+def create_protags(sender, instance, created, **kwargs):
+    if created:
+        ProTags.objects.create(user=instance)
+
+
+@receiver(post_save, sender=Project)
+def save_protags(sender, instance, **kwargs):
+    instance.ProTags.save()
+
+
 
 class Userpro(models.Model):
     # this model define just many to many relationship of user
