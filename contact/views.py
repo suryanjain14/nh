@@ -15,7 +15,7 @@ def cont(request):
     if request.method == "POST":
 
 
-            subject = 'Thankyou for registering on NerdHerd!!'
+            subject = 'Review to NerdHerd!'
             message = 'this is messages'
             from_email = [u_form.email]
             to_list = ['nerdherdindore@gmail.com']
