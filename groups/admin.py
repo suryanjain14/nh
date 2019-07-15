@@ -7,6 +7,7 @@ admin.site.register(Group)
 admin.site.register(Groupuser)
 admin.site.register(Groupprojects)
 admin.site.register(GroupAdmin)
+
 '''
 from .models import Usrgroup, Groupdetails, Progroup
 # Register your models here.
