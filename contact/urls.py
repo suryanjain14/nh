@@ -1,8 +1,8 @@
 from django import forms
 from django.urls import path
-from . import views
+from .views import cont
 
 urlpatterns = [
- path('',views.cont,name='contact'),
+ path('', cont, name='contact'),
 
 ]
