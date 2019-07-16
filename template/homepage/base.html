@@ -61,7 +61,7 @@
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop" href="#projects">Projects</a>
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop" href="#">Projects</a>
                 <div class="dropdown-menu">
                     {% if user.is_authenticated %}
                         <a class="dropdown-item" href="#">On Going</a>
@@ -89,7 +89,7 @@
                     <a href="{% url 'home1' %}" class="nav-link">News</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'db' %}">{{user.username}}</a>
+                    <a class="nav-link" href="{% url 'db' %}">{{ user.username }}</a>
                 </li>
                 <li class="nav-item ">
                     <a href="{% url 'logout' %}" class="nav-link">Logout</a>
@@ -113,42 +113,43 @@
 <!-- Start Contact Section -->
 
 
-    <footer>
-        <div id="contact">
-            <div class="row justify-content-center">
-                <div class="col-md-5 text-center">
-                    <img src="{% static 'img/nerdherd5.png' %}">
-                    <p>Nerdherd is a growing community started by the students of IIPS-DAVV, Indore, where we focus and
-                        motivates young developers to building real-time projects.</p>
-                    <strong>Contact Info</strong>
-                    <p>nerdherdindore@gmail.com</p>
+<footer>
 
-                    <a href="" target="_blank"><i class="fab fa-github-square"></i></a>
-                    <a href="" target="_blank"><i class="fab fa-facebook-square"></i></a>
-                    <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
+    <div id="contact">
+        <div class="row justify-content-center">
+            <div class="col-md-5 text-center">
+                <img src="{% static 'img/nerdherd5.png' %}">
+                <p>Nerdherd is a growing community started by the students of IIPS-DAVV, Indore, where we focus and
+                    motivates young developers to building real-time projects.</p>
+                <strong>Contact Info</strong>
+                <p>nerdherdindore@gmail.com</p>
 
-                <hr class="socket">
-                &copy; Nerdherd.
-            </div><!-- End Of Row -->
-        </div>
-    </footer>
+                <a href="" target="_blank"><i class="fab fa-github-square"></i></a>
+                <a href="" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <hr class="socket">
+            &copy; Nerdherd.
+        </div><!-- End Of Row -->
+    </div>
+</footer>
 
 <!-- End Contact Section -->
 
-    <!--- Script Source Files -->
-    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
-    <link
-            href="https://fonts.googleapis.com/css?family=Roboto:400,700"
-            rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/fixed.css' %}">
+<!--- Script Source Files -->
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
+<link
+        href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+        rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="stylesheet" href="{% static 'css/fixed.css' %}">
 
-    <!--- End of Script Source Files -->
+<!--- End of Script Source Files -->
 
 </body>
 </html>
