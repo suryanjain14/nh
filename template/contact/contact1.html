@@ -35,12 +35,12 @@
         <div class="form" >
                     <!-- style="position: absolute;top: 75%;left: 50%;transform: translate(-50%,-50%);text-align: center;font-size: 12px;font-weight: bold;"-->
                 <div class="row justify-content-center">
-                    <div class="row text-left" style="background-image: linear-gradient(57deg, red, blue);padding:25px;">
+                    <div class="row text-left" style="background-image: linear-gradient(57deg,black,green,black);padding:25px;">
                         <form method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
                             {% if user.is_authenticated %}
 
-                            <div class="form-group" style="color:white;size:20px;"><h3>Name</h3> {{ u_form.first_name}} {{ u_form.last_name}}</div>
+                            <div class="form-group" style="color:white;width:20px;"><h3>Name</h3> {{ u_form.first_name}} {{ u_form.last_name}}</div>
                                 <div class="form-group" style="color:white;"><h3>E-mail</h3> {{ u_form.email}}</div>
                                 <div class="form-group" style="color:white;">{{ p_form.message|as_crispy_field }}</div>
                             <div class="row justify-content-center"><div class="form-group"><button class="btn btn-primary" type="submit" style="margin-bottom:20px;">Send</button></div></div>
