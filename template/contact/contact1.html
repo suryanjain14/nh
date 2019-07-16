@@ -1,0 +1,78 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+    {% load crispy_forms_tags %}
+{% block content %}
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,600|Montserrat:300,300i,400,400i,500,500i,600,600i,700|Ubuntu:300,300i,400,400i,500,500i,700"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'contact/style.css' %}">
+    <style>
+
+        body {
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+    </style>
+    <body background="{% static 'contact/images/BG.jpg' %}">
+
+    <div><br><br><br></div>
+
+    <div class="container-fluid">
+            <div class="header">
+
+                <h1 class="row justify-content-center" style="color: #fff;font-size:36px;">Contact Us<br></h1>
+
+                <p class="row justify-content-center" style="color: #fff;font-size:30px;margin-bottom: 20px;font-weight: 600;">COME,COLLAB,LEARN</p>
+                <p  class="row justify-content-center" style="font-size:22px;color: #fff;">Please suggest us how we can improve.Kindly send all queries,suggestion and
+                    feedback and make us better. </p>
+            </div>
+            </div>
+
+
+        <div class="form" >
+                    <!-- style="position: absolute;top: 75%;left: 50%;transform: translate(-50%,-50%);text-align: center;font-size: 12px;font-weight: bold;"-->
+                <div class="row justify-content-center">
+                    <div class="row text-left" style="background-image: linear-gradient(57deg, red, blue);padding:25px;">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% if user.is_authenticated %}
+
+                            <div class="form-group" style="color:white;size:20px;"><h3>Name</h3> {{ u_form.first_name}} {{ u_form.last_name}}</div>
+                                <div class="form-group" style="color:white;"><h3>E-mail</h3> {{ u_form.email}}</div>
+                                <div class="form-group" style="color:white;">{{ p_form.message|as_crispy_field }}</div>
+                            <div class="row justify-content-center"><div class="form-group"><button class="btn btn-primary" type="submit" style="margin-bottom:20px;">Send</button></div></div>
+
+
+
+                            {% else %}
+
+                                <div class="form-group"  style="color:white;"><h3>Name</h3>{{ u_form.msgusername}}</div>
+                                <div class="form-group"  style="color:white;"><h3>E-mail</h3>{{ u_form.email}}</div>
+                                <div class="form-group"  style="color:white;">{{ p_form.message|as_crispy_field}}</div>
+                            <div class="row justify-content-center"><div class="form-group"><button class="btn btn-primary" type="submit" style="margin-bottom:20px;">Send</button></div></div>
+
+
+
+                            {% endif %}
+
+                </form>
+
+                </div>
+                </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+    </div>
+
+    <script src="{% static 'mtt/app.js' %}"></script>
+    </body>
+{% endblock content %}
