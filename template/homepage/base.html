@@ -74,14 +74,16 @@
                     {% endif %}
                 </div>
             </li>
-
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                <a class="nav-link" href="{% url 'mtt' %}">About Us</a>
             </li>
 
+
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'mtt' %}"><i class="fa fa-star" aria-hidden="true"></i>About Us</a>
+                <a class="nav-link" href="{% url 'contact' %}"><i class="fa fa-address-book" aria-hidden="true"></i> Contact</a>
             </li>
+
+
 
 
             {% if user.is_authenticated %}
