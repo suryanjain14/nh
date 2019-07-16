@@ -31,7 +31,17 @@
             </div>
             </div>
 
+            <div class="container">
+                {% if messages %}
 
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+        </div>
         <div class="form" >
                     <!-- style="position: absolute;top: 75%;left: 50%;transform: translate(-50%,-50%);text-align: center;font-size: 12px;font-weight: bold;"-->
                 <div class="row justify-content-center">
@@ -49,7 +59,7 @@
 
                             {% else %}
 
-                                <div class="form-group"  style="color:white;"><h3>Name</h3>{{ u_form.msgusername}}</div>
+                                <div class="form-group"  style="color:white;justify-content:center;"><h3>Name</h3>{{ u_form.msgusername}}</div>
                                 <div class="form-group"  style="color:white;"><h3>E-mail</h3>{{ u_form.email}}</div>
                                 <div class="form-group"  style="color:white;">{{ p_form.message|as_crispy_field}}</div>
                             <div class="row justify-content-center"><div class="form-group"><button class="btn btn-primary" type="submit" style="margin-bottom:20px;">Send</button></div></div>
@@ -73,6 +83,7 @@
     </div>
     </div>
 
-    <script src="{% static 'mtt/app.js' %}"></script>
+
+
     </body>
 {% endblock content %}
