@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from .forms import msg_form,msguser_form
+from django.contrib import messages
 
 
 def cont(request):
@@ -28,6 +29,7 @@ def cont(request):
         message = int2.message
         to_list = ['nerdherdindore@gmail.com']
         send_mail(subject, message, from_email, to_list, fail_silently=True)
-        return redirect('home')
+        messages.success(request, f'Review has been send successfully!')
+        return redirect('contact')
 
     return render(request, "contact/contact1.html",{'u_form':u_form,'p_form':p_form})
