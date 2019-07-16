@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'css/fixed.css' %}">
-
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 
@@ -80,20 +80,20 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'mtt' %}">About</a>
+                <a class="nav-link" href="{% url 'mtt' %}"><i class="fa fa-star" aria-hidden="true"></i>About Us</a>
             </li>
 
 
             {% if user.is_authenticated %}
 
                 <li class="nav-item ">
-                    <a href="{% url 'home1' %}" class="nav-link">News</a>
+                    <a href="{% url 'home1' %}" class="nav-link"><i class="fas fa-newspaper" aria-hidden="true"></i> News</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'db' %}"><i class="fa fa-user" aria-hidden="true"></i> {{ user.username }}</a>
                 </li>
                 <li class="nav-item ">
-                    <a href="{% url 'logout' %}" class="nav-link"><i class="fa fa-sign-out"></i> Logout</a>
+                    <a href="{% url 'logout' %}" class="nav-link "><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </li>
             {% else %}
                 <li class="nav-item">
