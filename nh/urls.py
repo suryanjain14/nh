@@ -1,13 +1,12 @@
 from django.contrib import admin
 from django.urls import path, include
 from homepage import views as hv
-from users import views as uv
+from template.user import views as uv
 from django.contrib.auth import views as auth
 from users.forms import login
 from django.conf import settings
 from django.conf.urls.static import static
 from project import views as pv
-from news_update import urls
 from mtteam import views as mtt
 
 
@@ -18,6 +17,8 @@ urlpatterns = [
     path('login/', login.as_view(template_name='user/login.html'), name='login'),
     path('logout/', auth.LogoutView.as_view(template_name='user/logout.html'), name='logout'),
     path('signup/', uv.register, name='signup'),
+    path('privacy policy/', uv.privacy, name='privacy'),
+    path('terms/', uv.terms, name='terms'),
     path('profile/', uv.profile, name='profile'),
     path('profileup/', uv.profileupdate, name='profileup'),
     path('password-reset/', auth.PasswordResetView.as_view(template_name='user/password_reset.html'),
