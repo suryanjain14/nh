@@ -1,17 +1,24 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from .forms import user, userupdateform, profileupdateform  # ,login
+from users.forms import user, userupdateform, profileupdateform  # ,login
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from nh import settings
 from django.contrib.auth.models import User
-from .models import Friend
+from users.models import Friend
 from project.models import Project, ProTags ,Userpro
 # from groups.models import Groupdetails,Usrgroup,Progroup
 from groups.models import Group
 
 # Create your views here.
+def privacy(request):
+    return render(request,'user/privacy.html')
+
+
+def terms(request):
+    return render(request,'user/terms.html')
+
 def register(request):
     if request.method == "POST":
         form = user(request.POST)
@@ -144,3 +151,5 @@ def remove(request):
     friends = friend.users.all()
     arg = {'friends': friends}
     return render(request, 'user/remove.html', arg)
+
+
