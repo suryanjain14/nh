@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+
+body{
+  background: url(8.jpg) top center no-repeat ;
+  background-size: cover;
+  height: 100vh;
+}
+
+.wrapper{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 0 20px;
+  }
+
+.create-new-project{
+  max-width: 550px;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.8);
+  padding: 30px;
+  border-radius: 5px;
+  display: flex;
+  box-shadow: 0 0 20px rgba(0 , 0, 0, 0.1);
+}
+
+.input-fields{
+  display: flex;
+  margin-right: 4%;
+  flex-direction: column;
+
+}
+
+
+.input-fields,
+.desc{
+  width: 48%;
+
+  }
+
+  .input-fields .input,
+  .desc textarea{
+    margin: 10px 0;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #c5ecfd;
+    padding: 10px;
+    color: #c5ecfd;
+    width: 100%;
+  }
+
+.desc textarea{
+  height: 212px;
+}
+
+
+  ::-webkit-input-placeholder{
+    color: #c5ecfd;
+  }
+
+  ::-moz-input-placeholder{
+    color: #c5ecfd;
+  }
+
+  ::-ms-input-placeholder{
+    color: #c5ecfd;
+  }
+
+  .btn{
+    background-color:  #1e7882;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+
+  }
+
+
+
+  @media screen and (max-width: 600px){
+    .create-new-project{
+      flex-direction: column;
+    }
+
+    .msg textarea{
+      height: 80px;
+    }
+
+    .input-fields .input{
+      width: 100%;
+    }
+
+  }
