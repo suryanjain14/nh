@@ -38,7 +38,7 @@ urlpatterns = [
     path('db/add/', uv.add, name='add'),
     path('db/remove/', uv.remove, name='remove'),
     path('event/', include('news_update.urls'), name='event'),
-    path('project/', pv.project),
+    path('project/',include('project.urls')),
     path('db/start/<pk>/starting', pv.prostart, name='startproject'),
     path('abt/', mtt.meet, name='mtt'),
     path('groups/', include('groups.urls')),
