@@ -65,9 +65,9 @@
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop" href="#">Projects</a>
                 <div class="dropdown-menu">
                     {% if user.is_authenticated %}
-                        <a class="dropdown-item" href="{%url 'project'%}">On Going</a>
+                        <a class="dropdown-item" href="#">On Going</a>
                         <a class="dropdown-item" href="#">Completed</a>
-                        <a class="dropdown-item" href="#">New</a>
+                        <a class="dropdown-item" href="{%url 'project'%}">New</a>
                     {% else %}
 
                         <a class="dropdown-item" href="#">New</a>
