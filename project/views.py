@@ -3,7 +3,7 @@ from .models import Project,Userpro
 
 # Create your views here.
 def project(request):
-    return render(request, 'project/project.html')
+    return render(request, 'Create_new_project_page/create_new_project.html')
 
 
 def prostart(request, pk):
