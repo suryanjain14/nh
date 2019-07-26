@@ -10,9 +10,11 @@
 }
 
 
-body{
-  background: url(8.jpg) top center no-repeat ;
+.container1{
+
+  background: url(images/9.jpg) top center no-repeat ;
   background-size: cover;
+  padding:0px;
   height: 100vh;
 }
 
