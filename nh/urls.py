@@ -1,5 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
+
+import resource
 from homepage import views as hv
 from template.user import views as uv
 from django.contrib.auth import views as auth
@@ -43,6 +45,7 @@ urlpatterns = [
     path('abt/', mtt.meet, name='mtt'),
     path('groups/', include('groups.urls')),
     path('contact us/', include('contact.urls'), name='contact'),
+    path('resource/', include('resource.urls'), name = 'resource'),
 
 ]
 
