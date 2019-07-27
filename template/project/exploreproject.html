@@ -1,74 +1,89 @@
 {% extends 'homepage/base.html' %}
 {% block content %}
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <br>
     <br>
-<main role="main" class="container">
+    <div>
+        <main role="main" class="container">
 
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-2">
-                    <img src="https://via.placeholder.com/200?text=User" alt="..." class="img-thumbnail">
-                </div>
-                <div class="col-md-10">
-                    <h2>Roberto Sequeira</h2>
-                    <p class="mb-1"><i class="fas fa-envelope"></i> robertocodes@mailinator.com</p>
-                    <p class="mb-1"><i class="fas fa-phone"></i> +506 11111111</p>
-                    <p class="mb-1">Cartago, Costa Rica.</p>
-                    <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quisquam
-                        praesentium consequatur quaerat nobis minus cupiditate, beatae alias autem odio illum reiciendis
-                        harum adipisci laborum? Eos exercitationem nulla itaque hic.</p>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="https://via.placeholder.com/200?text=User" alt="..." class="img-thumbnail">
+                        </div>
+                        <div class="col-md-10">
+                            <h2>Roberto Sequeira</h2>
+                            <p class="mb-1"><i class="fas fa-envelope"></i> robertocodes@mailinator.com</p>
+                            <p class="mb-1"><i class="fas fa-phone"></i> +506 11111111</p>
+                            <p class="mb-1">Cartago, Costa Rica.</p>
+                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quisquam
+                                praesentium consequatur quaerat nobis minus cupiditate, beatae alias autem odio illum
+                                reiciendis
+                                harum adipisci laborum? Eos exercitationem nulla itaque hic.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <div class="card mt-5">
+                <div class="card-header d-flex justify-content-between align-items-start">
+                    <h3 class="card-title">Experience</h3>
+                    <a class="btn btn-light btn-sm float-right" href="#" role="button">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </div>
+
+                <div class="card-body">
+                    <div class="resume-item mb-5">
+                        <div class="resume-content">
+                            <h4 class="mb-0">Web Developer</h4>
+                            <p class="h5 text-muted mb-3">CPA Global <small>December 2011 - March 2013</small></p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis deleniti soluta atque,
+                                inventore obcaecati nemo nostrum temporibus accusantium expedita quaerat magni tempora,
+                                quas
+                                quia doloremque nulla molestias voluptatem aliquid ducimus?</p>
+                        </div>
+                    </div>
+
+                    <div class="resume-item mb-5">
+                        <div class="resume-content">
+                            <h4 class="mb-0">.Net Developer</h4>
+                            <p class="h5 text-muted mb-3">Growth Acceleration Partners <small>January 2010 - December
+                                2011</small></p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis deleniti soluta atque,
+                                inventore obcaecati nemo nostrum temporibus accusantium expedita quaerat magni tempora,
+                                quas
+                                quia doloremque nulla molestias voluptatem aliquid ducimus?</p>
+                        </div>
+                    </div>
+
+                    <div class="resume-item mb-5">
+                        <div class="resume-content">
+                            <h4 class="mb-0">Angular Developer</h4>
+                            <p class="h5 text-muted mb-3">CPA Global <small>June 2009 - January 2010</small></p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis deleniti soluta atque,
+                                inventore obcaecati nemo nostrum temporibus accusantium expedita quaerat magni tempora,
+                                quas
+                                quia doloremque nulla molestias voluptatem aliquid ducimus?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+
     </div>
-
-    <div class="card mt-5">
-        <div class="card-header d-flex justify-content-between align-items-start">
-            <h3 class="card-title">Experience</h3>
-            <a class="btn btn-light btn-sm float-right" href="#" role="button">
-                <i class="fas fa-plus"></i>
-            </a>
-        </div>
-
-        <div class="card-body">
-            <div class="resume-item mb-5">
-                <div class="resume-content">
-                    <h4 class="mb-0">Web Developer</h4>
-                    <p class="h5 text-muted mb-3">CPA Global <small>December 2011 - March 2013</small></p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis deleniti soluta atque,
-                        inventore obcaecati nemo nostrum temporibus accusantium expedita quaerat magni tempora, quas
-                        quia doloremque nulla molestias voluptatem aliquid ducimus?</p>
-                </div>
-            </div>
-
-            <div class="resume-item mb-5">
-                <div class="resume-content">
-                    <h4 class="mb-0">.Net Developer</h4>
-                    <p class="h5 text-muted mb-3">Growth Acceleration Partners <small>January 2010 - December
-                        2011</small></p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis deleniti soluta atque,
-                        inventore obcaecati nemo nostrum temporibus accusantium expedita quaerat magni tempora, quas
-                        quia doloremque nulla molestias voluptatem aliquid ducimus?</p>
-                </div>
-            </div>
-
-            <div class="resume-item mb-5">
-                <div class="resume-content">
-                    <h4 class="mb-0">Angular Developer</h4>
-                    <p class="h5 text-muted mb-3">CPA Global <small>June 2009 - January 2010</small></p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis deleniti soluta atque,
-                        inventore obcaecati nemo nostrum temporibus accusantium expedita quaerat magni tempora, quas
-                        quia doloremque nulla molestias voluptatem aliquid ducimus?</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-</main>
-
-
 {% endblock %}
