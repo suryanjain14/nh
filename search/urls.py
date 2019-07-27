@@ -5,5 +5,5 @@ from .views import (SearchProjectView,
                 )
 
 urlpatterns = [
-
+    path('', SearchProjectView.as_view(), name='query'),
 ]
