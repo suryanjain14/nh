@@ -7,7 +7,7 @@ def project(request):
     return render(request, 'project/project1.html',{'pro':pro})
 
 def custom(request):
-    return render(request,'create_new_project_page/create_new_project.html')
+    return render(request, 'create_new_project_page/create_new_project.html')
 
 def prostart(request, pk):
     new_project = Project.objects.get(pk=pk)
