@@ -22,7 +22,9 @@ class groupedit(forms.ModelForm):
 
         fields = {'image', 'name', 'bio', 'status', 'admin'}
 
-    '''
+
+'''
+
     def __init__(self, user, *args, **kwargs):
         temp = user
         groups =Group.objects.all()
@@ -37,4 +39,5 @@ class groupedit(forms.ModelForm):
         group = Group.objects.filter(pk=id)
         self.admin = forms.ModelChoiceField(queryset=group.users)
         super(groupedit, self).__init__(*args, **kwargs)
+
 '''
