@@ -24,8 +24,8 @@ class Resources(models.Model):
         return f'{self.name}'
 
 
-class Resource_Tags(models.Model):
-    resources = models.ForeignKey(Resources, on_delete=models.CASCADE())
+class Resource_Platform(models.Model):
+    resources = models.ForeignKey(Resources, on_delete=models.CASCADE)
     tags = models.CharField(max_length=25)
 
     def __str__(self):
