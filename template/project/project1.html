@@ -1,8 +1,10 @@
 {%extends 'homepage/base.html'%}
+{%load static%}
 {%block content%}
 
+
 <title>New project</title>
-<br><br>
+
 <style>
 .card {
   /* Add shadows to create the "card" effect */
@@ -20,12 +22,17 @@
   padding: 2px 16px;
 }
 </style>
+ <link rel="stylesheet" href="{%static 'project1/Style.css'%}">
 <div class="container1">
 
+    <br><br><br><br>
+    <div style="display:flex;">
+        <h1 style="text-align:center;width:80%;">Nerd Herd Projects</h1>&nbsp;&nbsp;<a href="{%url 'custom'%}"><button class="btn btn-success" >Start your own project</button></a>
+</div>
     {% for p in pro %}
-        <div class="card">
-            <div class="card-header" style="display:flex;">
-                <h1 style="width:85%;">{{ p.pro_name }}</h1>
+        <div class="card" style="margin-left:20%;margin-right:20%;">
+            <div class="card-header" style="display:flex;background:linear-gradient(57deg,red,orange);">
+                <h1 style="width:85%;color:white;">{{ p.pro_name }}</h1>
                 <div class="menu" >
                 <ul>
 
@@ -51,5 +58,7 @@
             </div>
         </div>
     {% endfor %}
+    <br><br>
 </div>
+
 {%endblock content%}
