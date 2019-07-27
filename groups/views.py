@@ -16,7 +16,7 @@ def groupprofile(request, pk):
     # for group in groups:
     #    for user in group.users.all:
     #       if user == request.user:
-    #          user
+    #          userd
     if request.method == 'POST':
         gform = groupedit(request.POST)  # ,request.user)
         if gform.is_valid():
