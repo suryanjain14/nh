@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
+
 from homepage import views as hv
 from template.user import views as uv
 from django.contrib.auth import views as auth
@@ -22,7 +23,7 @@ urlpatterns = [
     path('profile/', uv.profile, name='profile'),
     path('profileup/', uv.profileupdate, name='profileup'),
     path('password-reset/', auth.PasswordResetView.as_view(template_name='user/password_reset.html'),
-         name='password_reset'),
+         name='password_reset'),  # ye chutiya hai manish
     path('password-reset-done/', auth.PasswordResetDoneView.as_view(template_name='user/password_reset_done.html'),
          name='password_reset_done'),
     path('password-reset-confirm/<uidb64>/<token>/',
@@ -43,6 +44,7 @@ urlpatterns = [
     path('abt/', mtt.meet, name='mtt'),
     path('groups/', include('groups.urls')),
     path('contact us/', include('contact.urls'), name='contact'),
+    # path('resource/', include('resource.urls'), name = 'resource'),
 
 ]
 
