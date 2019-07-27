@@ -2,20 +2,46 @@
 {%block content%}
 
 <title>New project</title>
+<br><br>
+<style>
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+</style>
 <div class="container1">
 
     {% for p in pro %}
         <div class="card">
-            <div class="card-header">
-                <h1>{{ p.pro_name }}</h1>
-             </div>
+            <div class="card-header" style="display:flex;">
+                <h1 style="width:85%;">{{ p.pro_name }}</h1>
+                <div class="menu" >
+                <ul>
+
+                    <li style="list-style:none;"><a href="#" style="align:right;" class="btn btn-primary">+ Explore</a></li>
+                </ul>
+            </div>
+
+
+                 </div>
 
 
             <div class="card-body">
-                <h5 class="card-title"> {{ p.pro_name }}</h5>
 
-                <p class="card-text">{{ p.prerequisite }}</p>
-                <p class="card-text">{{ p.description }}</p>
+
+                <p class="card-text"><b>Pre-Requisite</b> {{ p.prerequisite }}</p>
+                <p class="card-text"><b>Description</b> {{ p.description }}</p>
 
                 <br>
                 <div class="card-header" style="text-align:right;">
