@@ -13,6 +13,11 @@ def prostart(request, pk):
     Userpro.start_project(request.user, new_project)
     return  redirect('db')
 
+
+def explore(request):
+    pro = project1.objects.all().order_by('created_on')
+    arg = {'pro': pro}
+    return render(request, 'project/exploreproject.html', arg)
 '''
 def friend(request, operation, pk):
     new_friend = User.objects.get(pk=pk)
