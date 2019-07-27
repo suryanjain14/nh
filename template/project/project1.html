@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New project</title>
+</head>
+<body>
+    {% for p in pro %}
+
+    <div class="card">
+
+        <div class="card-body">
+            <h5 class="card-title"> {{ p.pro_name }}</h5>
+
+            <p class="card-text">{{ p.prerequisite }}</p>
+            <p class="card-text">{{ p.description }}</p>
+
+            <br>
+            <footer class="blockquote-footer">{{p.created_on}}</footer>
+
+        </div>
+    </div>
+{% endfor %}
+</body>
+</html>
