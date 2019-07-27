@@ -16,16 +16,16 @@ class Resources(models.Model):
     image = models.ImageField(null=True)
     files = models.FileField(null=True)
     links = models.CharField(max_length=512, null=True)
-    creator = models.ForeignKey(to=User)
+    creator = models.ForeignKey(to=User, on_delete=models.DO_NOTHING)
     promoter = models.BooleanField(default=False, choices=PROMOTER)
     language = models.CharField(max_length=10)
 
     def __str__(self):
-        return self.name
+        return f'{self.name}'
 
 
 class Resource_Platform(models.Model):
-    resources = models.ForeignKey(Resources)
+    resources = models.ForeignKey(Resources, on_delete=models.CASCADE())
     tags = models.CharField(max_length=25)
 
     def __str__(self):
