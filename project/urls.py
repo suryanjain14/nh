@@ -5,8 +5,8 @@ from django.urls import path
 urlpatterns = [
 
     path('new/', views.project, name='project'),
-    path('exp/<pk>', views.explore, name='expr'),
-
+    path('exp/<pk>', views.explore, name='exp'),
+    path('custom project/', views.custom, name='custom'),
 
 
 ]
