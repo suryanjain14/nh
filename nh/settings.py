@@ -35,7 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'resource',
+    'resources',
     'homepage',
     'mtteam',
     'project',

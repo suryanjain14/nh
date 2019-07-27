@@ -25,7 +25,7 @@ class Resources(models.Model):
 
 
 class Resource_Platform(models.Model):
-    resources = models.ForeignKey(Resources, on_delete=models.CASCADE())
+    resources = models.ForeignKey(Resources, on_delete=models.CASCADE)
     tags = models.CharField(max_length=25)
 
     def __str__(self):
