@@ -4,7 +4,6 @@ from .models import Project,Userpro,project1
 # Create your views here.
 def project(request):
     pro=project1.objects.all().order_by('created_on')
-
     return render(request, 'project/project1.html',{'pro':pro})
 
 
