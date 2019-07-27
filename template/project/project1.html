@@ -23,14 +23,12 @@
     </style>
     <link rel="stylesheet" href="{% static 'project1/Style.css' %}">
     <div class="container1">
-
         <br><br><br><br>
         <div style="display:flex;">
             <h1 style="text-align:center;width:80%;">Nerd Herd Projects</h1>&nbsp;&nbsp;<a href="{% url 'custom' %}">
             <button class="btn btn-success">Start your own project</button>
         </a>
         </div>
-
         {% for p in pro %}
             <div class="card" style="margin-left:20%;margin-right:20%;">
                 <div class="card-header" style="display:flex;background:linear-gradient(57deg,red,orange);">
@@ -38,28 +36,19 @@
                     <div class="menu">
                         <ul>
 
-
                             <li style="list-style:none;"><a href="{% url 'exp' pk=p.pk %}" style="align:right;"
                                                             class="btn btn-primary">+
                                 Explore</a></li>
                         </ul>
                     </div>
-
-
                 </div>
-
-
                 <div class="card-body">
-
-
                     <p class="card-text"><b>Pre-Requisite</b> {{ p.prerequisite }}</p>
                     <p class="card-text"><b>Description</b> {{ p.description }}</p>
-
                     <br>
                     <div class="card-header" style="text-align:right;">
                         <h8> - {{ p.created_on }}</h8>
                     </div>
-
                 </div>
             </div>
         {% endfor %}
