@@ -1,9 +1,11 @@
 from django.shortcuts import render,redirect
-from .models import Project,Userpro
+from .models import Project,Userpro,project1
 
 # Create your views here.
 def project(request):
-    return render(request, 'Create_new_project_page/create_new_project.html')
+    pro=project1.objects.all().order_by('created_on')
+
+    return render(request, 'project/project1.html',{'pro':pro})
 
 
 def prostart(request, pk):
