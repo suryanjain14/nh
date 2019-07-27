@@ -10,7 +10,7 @@ def project(request):
 def prostart(request, pk):
     new_project = Project.objects.get(pk=pk)
     Userpro.start_project(request.user, new_project)
-    return  redirect('db')
+    return redirect('db')
 
 
 def explore(request, pk):
