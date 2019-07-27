@@ -73,7 +73,7 @@
     color: #c5ecfd;
   }
 
-  ::-moz-input-placeholder{
+::-ms-input-placeholder {
     color: #c5ecfd;
   }
 
