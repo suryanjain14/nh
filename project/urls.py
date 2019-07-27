@@ -6,7 +6,7 @@ urlpatterns = [
 
     path('new/', views.project, name='project'),
     path('exp/<pk>', views.explore, name='exp'),
-    path('custom project/',views.custom,name='custom'),
+    path('custom project/', views.custom, name='custom'),
 
 
 ]
