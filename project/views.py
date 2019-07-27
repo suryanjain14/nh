@@ -13,6 +13,13 @@ def prostart(request, pk):
     Userpro.start_project(request.user, new_project)
     return  redirect('db')
 
+
+def explore(request, pk):
+    pro = project1.objects.get(pk=pk)
+    arg = {'pro': pro}
+    return render(request, 'project/exploreproject.html', arg)
+
+
 '''
 def friend(request, operation, pk):
     new_friend = User.objects.get(pk=pk)
@@ -21,6 +28,4 @@ def friend(request, operation, pk):
     elif operation == 'remove':
         Friend.remove_friend(request.user, new_friend)
     return redirect('db')
-
-
 '''
