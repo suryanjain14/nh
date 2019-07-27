@@ -86,3 +86,12 @@ aur Pro_stat ke models mai user aur project ke column mai data dale
 '''
 yeh signal ho gaya ya baccha hai?
 '''
+class project1(models.Model):
+    pro_name=models.CharField(max_length=30)
+    prerequisite=models.TextField()
+    description=models.TextField()
+    created_on=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.pro_name}'
+
