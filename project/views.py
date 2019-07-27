@@ -6,7 +6,6 @@ def project(request):
     pro=project1.objects.all().order_by('created_on')
     return render(request, 'project/project1.html',{'pro':pro})
 
-
 def custom(request):
     return render(request, 'create_new_project_page/create_new_project.html')
 
