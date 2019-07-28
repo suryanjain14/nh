@@ -50,6 +50,16 @@
 
   }
 
+.input-fields input {
+    margin: 20px;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #c5ecfd;
+    padding: 20px;
+    color: #c5ecfd;
+    width: 100%;
+}
+
   .input-fields{
   width:100px;
 
