@@ -7,3 +7,10 @@
 
 }
 
+.card-header {
+            padding: .75rem 1.25rem;
+            margin-bottom: 0;
+            background-color: rgba(255,0,0,0.2);
+            border-bottom: 1px solid rgba(0,0,0,.8);
+        }
+
