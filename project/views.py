@@ -1,7 +1,19 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import ListView, DetailView
 from .models import Project,Userpro,project1
+from django.http import Http404
 
 # Create your views here.
+
+'''
+class ProjectListView(ListView):
+    
+    template_name = "projects/list.html"
+
+    def get_queryset(self, *args, **kwargs):
+        request = self.request
+        return Project.objects.all()
+'''
 def project(request):
     pro=project1.objects.all().order_by('created_on')
     return render(request, 'project/project1.html',{'pro':pro})
