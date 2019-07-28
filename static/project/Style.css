@@ -51,13 +51,14 @@
   }
 
 .input-fields input {
+    border: 0;
     margin: 20px;
     background: transparent;
-    border: 0;
+
     border-bottom: 2px solid #c5ecfd;
-    padding: 20px;
+
     color: #c5ecfd;
-    width: 100%;
+
 }
 
   .input-fields{
@@ -69,9 +70,9 @@
     background: transparent;
     border: 0;
     border-bottom: 2px solid #c5ecfd;
-    padding: 20px;
-    color: #c5ecfd;
-    width: 100%;
+
+      color: #c5ecfd;
+
   }
 
 .desc textarea{
