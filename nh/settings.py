@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'contact.apps.ContactConfig',
-
+    'notification',
 ]
 
 MIDDLEWARE = [
