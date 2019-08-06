@@ -3,6 +3,6 @@ from django.urls import path
 
 urlpatterns = [
 
-    path('re', views.resource, name='resource'),
+     path('re', views.resource, name='resource'),
 
 ]
