@@ -1,0 +1,296 @@
+{% extends 'homepage/base.html' %}
+{% block content %}
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700');
+
+        .btn-default {
+            background: #006EFF;
+            width: 100%;
+            color: #fff;
+            font-weight: 700;
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+        }
+
+        .card {
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+            border: none;
+            margin-bottom: 30px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            transition: all 1s ease;
+            z-index: 999;
+        }
+
+        .card-01 .card-body {
+            position: relative;
+            padding-top: 40px;
+        }
+
+        .card-01 .badge-box {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            margin-left: -50px;
+            text-align: center;
+        }
+
+        .card-01 .badge-box i {
+            background: #006EFF;
+            color: #fff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .card-01 .height-fix {
+            height: 455px;
+            overflow: hidden;
+        }
+
+        .card-01 .height-fix .card-img-top {
+            width: auto !important;
+        }
+
+        .profile-box {
+            background-size: cover;
+            float: left;
+            width: 100%;
+            text-align: center;
+            padding: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-box img {
+            width: 170px;
+            height: 170px;
+            position: relative;
+            border: 5px solid #fff;
+        }
+
+        .card-01.height-fix .card-img-overlay {
+            top: unset;
+            color: #fff;
+            background: -moz-linear-gradient(top, rgba(26, 96, 111, 0) 0%, rgba(26, 96, 111, 0) 1%, rgba(24, 87, 104, 0.91) 31%, rgba(21, 65, 89, 0.91) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(26, 96, 111, 0) 0%, rgba(26, 96, 111, 0) 1%, rgba(24, 87, 104, 0.91) 31%, rgba(21, 65, 89, 0.91) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(26, 96, 111, 0) 0%, rgba(26, 96, 111, 0) 1%, rgba(24, 87, 104, 0.91) 31%, rgba(21, 65, 89, 0.91) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#001a606f', endColorstr='#e8154159', GradientType=0);
+        }
+
+        .card-01.height-fix .fa {
+            color: #fff;
+            font-size: 22px;
+            margin-right: 18px;
+        }
+
+        /*flipper-card*/
+        .card-flipper {
+            position: relative;
+            float: left;
+            width: 100%;
+            text-align: center;
+        }
+
+        .card__front,
+        .card__back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card__back .card {
+            width: 100%;
+            height: 65vh;
+        }
+
+        .card__front,
+        .card__back {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transition: -webkit-transform 0.3s;
+            transition: transform 0.3s;
+        }
+
+        .card__front {
+            background-color: #ff5078;
+        }
+
+        .card__back {
+            background-color: #1e1e1e;
+            -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+        }
+
+    </style>
+    <br>
+    <br>
+    <div class="container">
+        <br>
+        <h1>Resources</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-2 mb-3">
+
+                <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="{{ lan.language }}" role="tab"
+                           aria-controls="{{ lan.language }}" aria-selected="false">{{ lan.language }}</a>
+                    </li>
+                </ul>
+
+                </ul>
+
+                <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                           aria-controls="home" aria-selected="true">Getting Started</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#python" role="tab"
+                           aria-controls="python" aria-selected="false">Python</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#java" role="tab"
+                           aria-controls="java" aria-selected="false">Java</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-10">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h2>Home</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, eveniet earum. Sed
+                            accusantium eligendi molestiae quo hic velit nobis et, tempora placeat ratione rem
+                            blanditiis voluptates vel ipsam? Facilis, earum!</p>
+                    </div>
+                    <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="profile-tab">
+                        <h2>Python</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, eveniet earum. Sed
+                            accusantium eligendi molestiae quo hic velit nobis et, tempora placeat ratione rem
+                            blanditiis voluptates vel ipsam? Facilis, earum!</p>
+                        <h2>Projects</h2>
+                        <div class="card-columns">
+
+                            <div class="card">
+                                <!-- set a width on the image otherwise it will expand to full width       -->
+                                <img class="card-img-top img-fluid"
+                                     src="https://dummyimage.com/400x200/563d7c/ffffff&text=.card-img-top"
+                                     alt="Card image cap" width="400">
+                                <div class="card-body">
+                                    <h4 class="card-title">project name</h4>
+                                    <p class="card-text">project description</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-primary">View</a>
+                                </div>
+                            </div>
+                            <!-- /.card -->
+
+                            <div class="card">
+                                <!-- set a width on the image otherwise it will expand to full width       -->
+                                <img class="card-img-top img-fluid"
+                                     src="https://dummyimage.com/400x200/563d7c/ffffff&text=.card-img-top"
+                                     alt="Card image cap" width="400">
+                                <div class="card-body">
+                                    <h4 class="card-title">project name</h4>
+                                    <p class="card-text">project description</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-primary">View</a>
+                                </div>
+                            </div>
+                            <!-- /.card -->
+
+                            <div class="card">
+                                <!-- set a width on the image otherwise it will expand to full width       -->
+                                <img class="card-img-top img-fluid"
+                                     src="https://dummyimage.com/400x200/563d7c/ffffff&text=.card-img-top"
+                                     alt="Card image cap" width="400">
+                                <div class="card-body">
+                                    <h4 class="card-title">project name</h4>
+                                    <p class="card-text">project description</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-primary">View</a>
+                                </div>
+                            </div>
+                            <!-- /.card -->
+
+                            <div class="card">
+                                <!-- set a width on the image otherwise it will expand to full width       -->
+                                <img class="card-img-top img-fluid"
+                                     src="https://dummyimage.com/400x200/563d7c/ffffff&text=.card-img-top"
+                                     alt="Card image cap" width="400">
+                                <div class="card-body">
+                                    <h4 class="card-title">.card-title</h4>
+                                    <p class="card-text">.card-text</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-primary">View</a>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <!-- set a width on the image otherwise it will expand to full width       -->
+                                <img class="card-img-top img-fluid"
+                                     src="https://dummyimage.com/400x200/563d7c/ffffff&text=.card-img-top"
+                                     alt="Card image cap" width="400">
+                                <div class="card-body">
+                                    <h4 class="card-title">.card-title</h4>
+                                    <p class="card-text">.card-text</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-primary">View</a>
+                                </div>
+                            </div>
+
+
+                            <!-- /.card -->
+
+
+                        </div>
+                        <!-- /.card-group -->
+                        <div class="row">
+                            <div class="col-md-4">
+
+                                <div class="card card-01">
+                                    <img class="card-img-top"
+                                         src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/122693272/original/b72c2f1f1d13f934912ed4ae10d2337578f5f8f7/develop-python-code-for-data-science-projects.jpg"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <span class="badge-box"><i class="fa fa-check"></i></span>
+                                        <h4 class="card-title">Project title</h4>
+                                        <p class="card-text">Project description</p>
+                                        <a href="#" class="btn btn-default text-uppercase">Explore</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="java" role="tabpanel" aria-labelledby="contact-tab">
+                        <h2>Java</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, eveniet earum. Sed
+                            accusantium eligendi molestiae quo hic velit nobis et, tempora placeat ratione rem
+                            blanditiis voluptates vel ipsam? Facilis, earum!</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+
+{% endblock %}
