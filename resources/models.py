@@ -17,6 +17,7 @@ LANG = (
 
 class Language(models.Model):
     language = models.CharField(max_length=10, choices=LANG)
+    description = models.TextField(max_length=8042, default="")
 
     def __str__(self):
         return f'{self.language}'
