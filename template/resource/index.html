@@ -144,18 +144,17 @@
 
                 <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="{{ lan.language }}" role="tab"
-                           aria-controls="{{ lan.language }}" aria-selected="false">{{ lan.language }}</a>
-                    </li>
-                </ul>
-
-                </ul>
-
-                <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
-                    <li class="nav-item">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
                            aria-controls="home" aria-selected="true">Getting Started</a>
                     </li>
+                    {% for lan in lang %}
+                        <li class="nav-item">
+                            <a class="nav-link " id="{{ lan.language }}" data-toggle="tab"
+                               href="{{ lan.language }}" role="tab"
+                               aria-controls="{{ lan.language }}" aria-selected="false">{{ lan.language }}</a>
+                        </li>
+                    {% endfor %}
+
                     <li class="nav-item">
                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#python" role="tab"
                            aria-controls="python" aria-selected="false">Python</a>
@@ -175,7 +174,7 @@
                             accusantium eligendi molestiae quo hic velit nobis et, tempora placeat ratione rem
                             blanditiis voluptates vel ipsam? Facilis, earum!</p>
                     </div>
-                    <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python">
                         <h2>Python</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, eveniet earum. Sed
                             accusantium eligendi molestiae quo hic velit nobis et, tempora placeat ratione rem
@@ -279,7 +278,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="java" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="tab-pane fade" id="java" role="tabpanel" aria-labelledby="java">
                         <h2>Java</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, eveniet earum. Sed
                             accusantium eligendi molestiae quo hic velit nobis et, tempora placeat ratione rem
