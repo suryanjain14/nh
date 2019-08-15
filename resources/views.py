@@ -8,7 +8,7 @@ def resource(request):
 
     files = Resofile.objects.all()
     img = Resoimg.objects.all()
-    link = Reslink()
+    link = Reslink.objects.all()
     Ftag = Resource_Platform_file.objects.all()
     Itag = Resource_Platform_img.objects.all()
     Ltag = Resource_Platform_link.objects.all()
