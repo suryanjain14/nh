@@ -168,22 +168,29 @@
                     </div>
                     {% for lan in lang %}
                         {% if lan.language == "Python" %}
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#home1">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
-                                </li>
-                            </ul>
+
 
                             <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link " data-toggle="tab" href="#home1">{{ lan.language }}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#images">Images</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#links">Links</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#files">Files</a>
+                                    </li>
+                                </ul>
                         <h2>Python</h2>
                                 <p>{{ lan.description }}</p>
-                        <h2>Projects</h2>
+                                <div class="tab-content">
+                                    <div class="tab-pane container fade" id="images">
+
+                                        <h2>Images</h2>
                         <div class="card-columns">
 
                             <div class="card">
@@ -264,7 +271,12 @@
 
 
                         </div>
-                        <!-- /.card-group -->
+
+                                    </div>
+                                    <div class="tab-pane container fade" id="links">sdjhksahhdkjshakhk</div>
+                                    <div class="tab-pane container fade" id="files">
+                                        <h2>Files</h2>
+                                        <!-- /.card-group -->
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="card card-01">
@@ -280,13 +292,12 @@
                                 </div>
                             </div>
                         </div>
+
+                                    </div>
+                                </div>
                     </div>
 
-                            <div class="tab-content">
-                                <div class="tab-pane container active" id="home">...</div>
-                                <div class="tab-pane container fade" id="menu1">...</div>
-                                <div class="tab-pane container fade" id="menu2">...</div>
-                            </div>
+
 
                         {% endif %}
                         {% if lan.language == "Java" %}
