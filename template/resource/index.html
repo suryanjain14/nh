@@ -300,20 +300,42 @@
                                     <div class="tab-pane container fade" id="files">
                                         <h2>Files</h2>
                                         <!-- /.card-group -->
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="card card-01">
-                                                    <img class="card-img-top"
-                                                         src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/122693272/original/b72c2f1f1d13f934912ed4ae10d2337578f5f8f7/develop-python-code-for-data-science-projects.jpg"
-                                                         alt="Card image cap">
-                                                    <div class="card-body">
-                                                        <span class="badge-box"><i class="fa fa-check"></i></span>
-                                                        <h4 class="card-title">Project title</h4>
-                                                        <p class="card-text">Project description</p>
-                                                        <a href="#" class="btn btn-default text-uppercase">Explore</a>
+                                        <div class="card-columns">
+
+                                            {% for fi in files %}
+
+                                                {% if fi.language.language == lan.language %}
+
+
+                                                    <div class="card">
+                                                        <!-- set a width on the image otherwise it will expand to full width       -->
+                                                        <img class="card-img-top"
+                                                             src="https://www.shareicon.net/data/512x512/2016/04/14/749468_document_512x512.png"
+                                                             alt="Card image cap" width="240" height="220">
+                                                        <div class="card-body">
+                                                            <h4 class="card-title">{{ fi.name }}</h4>
+                                                            <p class="card-text">{{ fi.description }}</p>
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            <a href="http://127.0.0.1:8000{{ fi.files.url }}"
+                                                               class="btn btn-primary">Open</a>
+                                                        </div>
                                                     </div>
+                                                    <!-- /.card-->
+                                                {% endif %}
+                                            {% endfor %}
+                                            <div class="card card-01">
+                                                <img class="card-img-top"
+                                                     src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/122693272/original/b72c2f1f1d13f934912ed4ae10d2337578f5f8f7/develop-python-code-for-data-science-projects.jpg"
+                                                     alt="Card image cap">
+                                                <div class="card-body">
+                                                    <span class="badge-box"><i class="fa fa-check"></i></span>
+                                                    <h4 class="card-title">Project title</h4>
+                                                    <p class="card-text">Project description</p>
+                                                    <a href="#" class="btn btn-default text-uppercase">Explore</a>
                                                 </div>
                                             </div>
+
                                         </div>
 
                                     </div>
@@ -355,20 +377,21 @@
                                                 {% if ji.language.language == lan.language %}
 
 
-                                            <div class="card">
-                                                <!-- set a width on the image otherwise it will expand to full width       -->
-                                                <img class="card-img-top img-fluid"
-                                                     src="{{ ji.image.url }}"
-                                                     alt="Card image cap" width="400">
-                                                <div class="card-body">
-                                                    <h4 class="card-title">{{ ji.name }}</h4>
-                                                    <p class="card-text">{{ ji.description }}{{ ji.image.url }}}</p>
-                                                </div>
-                                                <div class="card-footer">
-                                                    <a href="http://127.0.0.1:8000{{ ji.image.url }}"
-                                                       class="btn btn-primary">View</a>
-                                                </div>
-                                            </div>
+                                                    <div class="card">
+                                                        <!-- set a width on the image otherwise it will expand to full width       -->
+                                                        <img class="card-img-top img-fluid"
+                                                             src="{{ ji.image.url }}"
+                                                             alt="Card image cap" width="400">
+                                                        <div class="card-body">
+                                                            <h4 class="card-title">{{ ji.name }}</h4>
+                                                            <p class="card-text">
+                                                                {{ ji.description }}{{ ji.image.url }}}</p>
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            <a href="http://127.0.0.1:8000{{ ji.image.url }}"
+                                                               class="btn btn-primary">View</a>
+                                                        </div>
+                                                    </div>
                                                     <!-- /.card-->
                                                 {% endif %}
                                             {% endfor %}
@@ -442,21 +465,43 @@
                                     <div class="tab-pane container fade" id="filesj">
                                         <h2>Files</h2>
                                         <!-- /.card-group -->
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="card card-01">
-                                                    <img class="card-img-top"
-                                                         src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/122693272/original/b72c2f1f1d13f934912ed4ae10d2337578f5f8f7/develop-python-code-for-data-science-projects.jpg"
-                                                         alt="Card image cap">
-                                                    <div class="card-body">
-                                                        <span class="badge-box"><i class="fa fa-check"></i></span>
-                                                        <h4 class="card-title">Project title</h4>
-                                                        <p class="card-text">Project description</p>
-                                                        <a href="#" class="btn btn-default text-uppercase">Explore</a>
+                                        <div class="card-columns">
+
+                                            {% for fi in files %}
+
+                                                {% if fi.language.language == lan.language %}
+
+
+                                                    <div class="card">
+                                                        <!-- set a width on the image otherwise it will expand to full width       -->
+                                                        <img class="card-img-top"
+                                                             src="https://www.shareicon.net/data/512x512/2016/04/14/749468_document_512x512.png"
+                                                             alt="Card image cap" width="240" height="220">
+                                                        <div class="card-body">
+                                                            <h4 class="card-title">{{ fi.name }}</h4>
+                                                            <p class="card-text">{{ fi.description }}</p>
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            <a href="http://127.0.0.1:8000{{ fi.files.url }}"
+                                                               class="btn btn-primary">Open</a>
+                                                        </div>
                                                     </div>
+                                                    <!-- /.card-->
+                                                {% endif %}
+                                            {% endfor %}
+                                            <div class="card card-01">
+                                                <img class="card-img-top"
+                                                     src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/122693272/original/b72c2f1f1d13f934912ed4ae10d2337578f5f8f7/develop-python-code-for-data-science-projects.jpg"
+                                                     alt="Card image cap">
+                                                <div class="card-body">
+                                                    <span class="badge-box"><i class="fa fa-check"></i></span>
+                                                    <h4 class="card-title">Project title</h4>
+                                                    <p class="card-text">Project description</p>
+                                                    <a href="#" class="btn btn-default text-uppercase">Explore</a>
                                                 </div>
                                             </div>
                                         </div>
+
 
                                     </div>
                                 </div>
@@ -593,20 +638,44 @@
                                     <div class="tab-pane container fade" id="filesjs">
                                         <h2>Files</h2>
                                         <!-- /.card-group -->
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="card card-01">
-                                                    <img class="card-img-top"
-                                                         src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/122693272/original/b72c2f1f1d13f934912ed4ae10d2337578f5f8f7/develop-python-code-for-data-science-projects.jpg"
-                                                         alt="Card image cap">
-                                                    <div class="card-body">
-                                                        <span class="badge-box"><i class="fa fa-check"></i></span>
-                                                        <h4 class="card-title">Project title</h4>
-                                                        <p class="card-text">Project description</p>
-                                                        <a href="#" class="btn btn-default text-uppercase">Explore</a>
+                                        <div class="card-columns">
+
+                                            {% for fi in files %}
+
+                                                {% if fi.language.language == lan.language %}
+
+
+                                                    <div class="card">
+                                                        <!-- set a width on the image otherwise it will expand to full width       -->
+                                                        <img class="card-img-top"
+                                                             src="https://www.shareicon.net/data/512x512/2016/04/14/749468_document_512x512.png"
+                                                             alt="Card image cap" width="240" height="220">
+                                                        <div class="card-body">
+                                                            <h4 class="card-title">{{ fi.name }}</h4>
+                                                            <p class="card-text">{{ fi.description }}</p>
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            <a href="http://127.0.0.1:8000{{ fi.files.url }}"
+                                                               class="btn btn-primary">Open</a>
+                                                        </div>
                                                     </div>
+                                                    <!-- /.card-->
+                                                {% endif %}
+                                            {% endfor %}
+                                            <div class="card card-01">
+                                                <img class="card-img-top"
+                                                     src="https://www.shareicon.net/data/512x512/2016/04/14/749468_document_512x512.png"
+                                                     alt="Card image cap" width="400">
+                                                <div class="card-body">
+                                                    <span class="badge-box"><i class="fa fa-check"></i></span>
+                                                    <h4 class="card-title">Project title</h4>
+                                                    <p class="card-text">Project description</p>
+                                                    <a href="#" class="btn btn-default text-uppercase">Open</a>
                                                 </div>
+
                                             </div>
+
+
                                         </div>
 
                                     </div>
