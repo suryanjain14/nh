@@ -150,19 +150,10 @@
                     {% for lan in lang %}
                         <li class="nav-item">
                             <a class="nav-link " id="{{ lan.language }}" data-toggle="tab"
-                               href="{{ lan.language }}" role="tab"
+                               href="#{{ lan.language.lower }}" role="tab"
                                aria-controls="{{ lan.language }}" aria-selected="false">{{ lan.language }}</a>
                         </li>
                     {% endfor %}
-
-                    <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#python" role="tab"
-                           aria-controls="python" aria-selected="false">Python</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#java" role="tab"
-                           aria-controls="java" aria-selected="false">Java</a>
-                    </li>
                 </ul>
             </div>
             <!-- /.col-md-4 -->
@@ -170,15 +161,28 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <h2>Home</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, eveniet earum. Sed
-                            accusantium eligendi molestiae quo hic velit nobis et, tempora placeat ratione rem
-                            blanditiis voluptates vel ipsam? Facilis, earum!</p>
+                        <p>Nerd herd is an interactive platform which is created to provide a common ground to all those
+                            who wish to learn new things in the field of computer science . It’s a dynamic student
+                            programming community that aims to help the participants to learn to work as a and make
+                            interactive projects as a team.And so is our motto Come,Collab,Learn</p>
                     </div>
-                    <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python">
+                    {% for lan in lang %}
+                        {% if lan.language == "Python" %}
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#home1">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python">
                         <h2>Python</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, eveniet earum. Sed
-                            accusantium eligendi molestiae quo hic velit nobis et, tempora placeat ratione rem
-                            blanditiis voluptates vel ipsam? Facilis, earum!</p>
+                                <p>{{ lan.description }}</p>
                         <h2>Projects</h2>
                         <div class="card-columns">
 
@@ -263,7 +267,6 @@
                         <!-- /.card-group -->
                         <div class="row">
                             <div class="col-md-4">
-
                                 <div class="card card-01">
                                     <img class="card-img-top"
                                          src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/122693272/original/b72c2f1f1d13f934912ed4ae10d2337578f5f8f7/develop-python-code-for-data-science-projects.jpg"
@@ -278,13 +281,28 @@
                             </div>
                         </div>
                     </div>
+
+                            <div class="tab-content">
+                                <div class="tab-pane container active" id="home">...</div>
+                                <div class="tab-pane container fade" id="menu1">...</div>
+                                <div class="tab-pane container fade" id="menu2">...</div>
+                            </div>
+
+                        {% endif %}
+                        {% if lan.language == "Java" %}
+
                     <div class="tab-pane fade" id="java" role="tabpanel" aria-labelledby="java">
                         <h2>Java</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, eveniet earum. Sed
-                            accusantium eligendi molestiae quo hic velit nobis et, tempora placeat ratione rem
-                            blanditiis voluptates vel ipsam? Facilis, earum!</p>
-
+                        <p>{{ lan.description }}</p>
                     </div>
+                        {% endif %}
+                        {% if lan.language == "Java" %}
+                            <div class="tab-pane fade" id="javascript" role="tabpanel" aria-labelledby="javascript">
+                                <h2>JavaScript</h2>
+                                <p>{{ lan.description }}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>

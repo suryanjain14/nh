@@ -5,6 +5,7 @@ from .models import *
 
 def resource(request):
     lang = Language.objects.all()
+
     files = Resofile.objects.all()
     img = Resoimg.objects.all()
     link = Reslink()
