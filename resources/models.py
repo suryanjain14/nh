@@ -9,7 +9,7 @@ PROMOTER = (
 LANG = (
     ("Python", "Python"),
     ("Java", "Java"),
-    ("C/C++/c#", "C/C++/c#"),
+    ("CFamily", "CFamily"),
     ("JavaScript", "JavaScript"),
 
 )
