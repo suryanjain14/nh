@@ -44,7 +44,7 @@ urlpatterns = [
     path('abt/', mtt.meet, name='mtt'),
     path('groups/', include('groups.urls')),
     path('contact us/', include('contact.urls'), name='contact'),
-    path('resource/', include('resources.urls'), name='resource'),
+    path('resource/', include('resources.urls'), name='r'),
 
 ]
 

@@ -50,18 +50,8 @@
     </div>
     <!-- End Home Section -->
 
-    <!-- Start Resources Section -->
+    <!-- Start resource Section -->
     <div id="resources" class="offset">
-        <div class="col-12 narrow text-center">
-            <h1></h1>
-            <h3><b>PROJECT</b></h3>
-            <a class="btn btn-secondary btn-md" href="" target="_blank">CLICK HERE</a>
-        </div>
-    </div>
-    <!-- End Resource Section -->
-
-    <!-- Start Projects Section -->
-    <div id="projects" class="offset">
         <div class="jumbotron container-fluid">
             <div class="col-12 text-center">
                 <h3 class="heading">Resources</h3>
@@ -70,42 +60,42 @@
             <div class="row no-padding">
                 <div class="col-sm-4">
                     <div class="projects">
-                        <a href="{% static 'img/projects/1.jpg' %}">
+                        <a href="{% url 'resource' %}">
                             <img src="{% static 'img/projects/1.png' %}" target="_blank">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="projects">
-                        <a href="{% static 'img/projects/2.png' %}">
+                        <a href="{% url 'resource' %}">
                             <img src="{% static 'img/projects/2.png' %}" target="_blank">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="projects">
-                        <a href="{% static 'img/projects/3.jpg' %}">
+                        <a href="{% url 'resource' %}">
                             <img src="{% static 'img/projects/3.jpg' %}" target="_blank">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="projects">
-                        <a href="{% static 'img/projects/4.jpg' %}">
+                        <a href="{% url 'resource' %}">
                             <img src="{% static 'img/projects/4.jpg' %}" target="_blank">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="projects">
-                        <a href="{% static 'img/projects/5.jpeg' %}">
+                        <a href="{% url 'resource' %}">
                             <img src="{% static 'img/projects/5.jpeg' %}" target="_blank">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="projects">
-                        <a href="{% static 'img/projects/6.png' %}">
+                        <a href="{% url 'resource' %}">
                             <img src="{% static 'img/projects/6.png' %}" target="_blank">
                         </a>
                     </div>
@@ -120,7 +110,17 @@
             </div><!-- End Of Row -->
         </div><!-- End Of Jumbotron -->
     </div>
-    <!-- End Projects Section -->
+    <!-- End resource Section -->
+
+    <!-- Start Project Section -->
+    <div id="projects" class="offset">
+        <div class="col-12 narrow text-center">
+            <h1></h1>
+            <h3><b>PROJECT</b></h3>
+            <a class="btn btn-secondary btn-md" href="" target="_blank">CLICK HERE</a>
+        </div>
+    </div>
+    <!-- End project Section -->
 
     <!-- Start Events Section -->
     <div id="events" class="offset">
