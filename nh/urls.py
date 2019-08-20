@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from homepage import views as hv
-from template.user import views as uv
+from users import views as uv
 from django.contrib.auth import views as auth
 from users.forms import login
 from django.conf import settings

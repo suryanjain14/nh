@@ -54,7 +54,7 @@ class Resofile(models.Model):
 class Resoimg(models.Model):
     language = models.ForeignKey(Language, on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, null=True)
     time = models.DateTimeField(auto_now=True)
     description = models.TextField(max_length=1024)
     image = models.ImageField(upload_to='media/resources/img')
