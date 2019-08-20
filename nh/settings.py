@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'QnA.apps.QnaConfig',
     'resources',
     'homepage',
     'mtteam',
