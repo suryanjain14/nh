@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.contrib.auth.models import User
+from users.forms import user
 from django.apps import apps
 
 
@@ -14,7 +15,7 @@ class Question(models.Model):
 
     def save(self,*args,**kwargs):
         self.slug=slugify(self.question_title)
-        self.posted_by=User.username
+        self.posted_by=user.username
         super(Question,self).save(*args,**kwargs)
 
 class Answer(models.Model):
@@ -25,6 +26,6 @@ class Answer(models.Model):
     posted_by=models.CharField(max_length=30)
 
     def save(self,*args,**kwargs):
-        self.posted_by=User.username
+        self.posted_by=user.username
         super(Answer,self).save(*args,**kwargs)
 
