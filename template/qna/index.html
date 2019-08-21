@@ -1,16 +1,19 @@
 {%extends "homepage/base.html"%}
+{%load crispy_forms_tags%}
 {%block content%}
 
         <div class="content">
+
         <h1>Ask a Question</h1>
         <p>Type your question below. You can also use Markdown to help format your question.</p>
-        <form class="" action="ask-question" method="post">
-            {% csrf_token %}
-            <input type="text" name="title" value="" autocomplete="off" placeholder="What's your question's title?"><p />
-            <textarea name="question" rows="8" cols="80" placeholder="What's your question?"></textarea><p />
-            <input type="text" name="posted_by" value="" autocomplete="off" placeholder="Enter your name ..."><p />
-            <input type="submit" name="ask" value="Ask Question">
-        </form>
+
+                <form  method="post" enctype="multipart/form-data" style="background-color:#ffffff;">
+        {% csrf_token %}
+        <div class="form-group">{{ u_form.question_title|as_crispy_field }}</div>
+        <div class="form-group">{{ u_form.question_description|as_crispy_field }}</div>
+        <div class="form-group"><button class="btn btn-primary" type="submit" style="margin-bottom:20px;">Save</button></div>
+
+</form>
         {% if error %}
             <p class="error">{{ error }}</p>
         {% endif %}

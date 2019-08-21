@@ -9,13 +9,12 @@ class Question(models.Model):
     qid=models.AutoField(primary_key=True)
     question_title=models.CharField(max_length=30)
     question_description=models.TextField(max_length=1024)
-    posted_by=models.CharField(max_length=30)
+    posted_by=models.CharField(max_length=30,blank=True)
     date_posted=models.DateTimeField(auto_now_add= True)
     slug=models.SlugField(max_length=30)
 
     def save(self,*args,**kwargs):
         self.slug=slugify(self.question_title)
-        self.posted_by=user.username
         super(Question,self).save(*args,**kwargs)
 
 class Answer(models.Model):
