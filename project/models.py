@@ -100,3 +100,12 @@ class Project1(models.Model):
     def __str__(self):
         return f'{self.pro_name}'
 
+
+class UserPro1(models.Model):
+    project = models.ForeignKey(Project1, on_delete=models.SET_NULL, null=True)
+    admin = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    started_on = models.DateTimeField(auto_now_add=True, )
+    users = models.ManyToManyField(User, related_name="users", null=True, default=admin)
+
+    def __str__(self):
+        return f'{self.admin} {self.project}'

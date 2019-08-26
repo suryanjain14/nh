@@ -125,6 +125,18 @@
     <br>
     <h1>Add Images</h1>
     <div class="block">
+
+        <form>
+            {% csrf_token %}
+            <div>
+                {{ form.language|as_crispy_field }}
+                {{ form.name|as_crispy_field }}
+                {{ form.image|as_crispy_field }}
+                {{ form.description|as_crispy_field }}
+
+            </div>
+
+        </form>
         <label class="button" for="images">Upload Images</label>
         <input type="file" id="images" multiple="multiple"/>
         <div id="multiple-file-preview">

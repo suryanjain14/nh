@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import *
-from .forms import Image
+from .forms import Imagefor
 # Create your views here.
 
 
@@ -17,4 +17,8 @@ def resource(request):
 
 
 def addimg(request):
-    return render(request, 'resource/addl.html')
+    form = Imagefor(request.POST)
+    user = request.user
+    arg = {'form': form}
+
+    return render(request, 'resource/addl.html', arg)
