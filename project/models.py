@@ -83,7 +83,6 @@ aur Pro_stat ke models mai user aur project ke column mai data dale
 '''
 
 '''
-yeh signal ho gaya ya baccha hai?
 '''
 class Project1(models.Model):
     pro_name=models.CharField(max_length=30)
