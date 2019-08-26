@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView
 from .models import Project, Userpro, Project1
 from django.http import Http404
-
+from .forms import Project1form
 # Create your views here.
 
 '''
@@ -58,3 +58,28 @@ def friend(request, operation, pk):
         Friend.remove_friend(request.user, new_friend)
     return redirect('db')
 '''
+def proview(request):
+
+    if request.method =="POST":
+       u_form= Project1form(request.POST or None,request.FILES or None)
+       if u_form.is_valid():
+           u_form.save(commit=False)
+           u_form.created_by=request.user
+           u_form.save()
+           project=Project1.objects.all(created_by=request.user)
+
+           context = {'u_form':u_form}
+           return render(request,"qna/index.html",context)
+       else:
+           questions = Question.objects.all()
+           error="something is wrong in the form"
+           u_form = Question_form(request.POST, request.FILES)
+           context = {'questions': questions, 'u_form': u_form,'error':error}
+           return render(request, "qna/index.html", context)
+    else:
+        questions = Question.objects.all()
+
+        u_form=Question_form(request.POST,request.FILES)
+        context = {'questions': questions,'u_form':u_form}
+        return render(request, "qna/index.html", context)
+

@@ -1,0 +1,66 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block content %}
+
+<title>New project</title>
+<br><br>
+<style>
+        .card {
+            /* Add shadows to create the "card" effect */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        /* On mouse-over, add a deeper shadow */
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Add some padding inside the card container */
+        .container {
+            padding: 2px 16px;
+        }
+
+</style>
+<link rel="stylesheet" href="{% static 'project1/Style.css' %}">
+<div class="container1">
+    <br><br><br><br>
+    <div style="display:flex;">
+        <h1 style="text-align:center;width:80%;">Nerd Herd Projects</h1>&nbsp;&nbsp;<a href="{% url 'custom' %}">
+        <button class="btn btn-success">Start your own project</button>
+    </a>
+    </div>
+    {% for p in pro %}
+    <div class="card" style="margin-left:20%;margin-right:20%;">
+        <!--<div class="card-header"-->
+             <!--style="display:flex;background:linear-gradient(57deg,rgb(100,241,4),rgb(255,111,9));">-->
+        <div class="card-header"
+             style="display:flex;background: linear-gradient(to right top, #053537, #085e60,
+             #0a8a8d, #0cb9bb, #12ebeb);">
+            <!--<div class="card-header"-->
+             <!--style="display:flex;background: linear-gradient(to right top, #1d8056, #189a78,-->
+             <!--#0fb59c, #06d0c2, #12ebeb);">-->
+            <h1 style="width:85%;color:white;">{{ p.pro_name }}</h1>
+            <div class="menu">
+                <ul>
+
+                    <li style="list-style:none;"><a href="{% url 'exp' pk=p.pk %}" style="align:right;"
+                                                    class="btn btn-dark">+
+                        Explore</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-body">
+            <p class="card-text"><b>Pre-Requisite</b> {{ p.prerequisite }}</p>
+            <p class="card-text"><b>Description</b> {{ p.description }}</p>
+            <br>
+            <div class="card-header" style="text-align:right;">
+                <h8> - {{ p.created_on }}</h8>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <br><br>
+</div>
+
+{% endblock content %}
