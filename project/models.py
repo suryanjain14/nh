@@ -2,8 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-
-
+from django.utils.text import slugify
 
 
 
@@ -86,11 +85,18 @@ aur Pro_stat ke models mai user aur project ke column mai data dale
 '''
 yeh signal ho gaya ya baccha hai?
 '''
-class project1(models.Model):
+class Project1(models.Model):
     pro_name=models.CharField(max_length=30)
     prerequisite=models.TextField()
     description=models.TextField()
     created_on=models.DateTimeField(auto_now_add=True)
+    created_by=models.CharField(max_length=30,blank=True)
+    duration=models.DateTimeField(auto_now=True)
+    slug = models.SlugField(max_length=30,blank=True)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.pro_name)
+        super(Project1, self).save(*args, **kwargs)
 
     def __str__(self):
         return f'{self.pro_name}'

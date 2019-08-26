@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView
-from .models import Project, Userpro, project1
+from .models import Project, Userpro, Project1
 from django.http import Http404
 
 # Create your views here.
@@ -31,7 +31,7 @@ class ProjectListView(ListView):
 #     return render(request, 'project/project1.html', context)
 
 def project(request):
-    pro=project1.objects.all().order_by('created_on')
+    pro=Project1.objects.all().order_by('created_on')
     return render(request, 'project/project1.html',{'pro':pro})
 
 def custom(request):
@@ -44,7 +44,7 @@ def prostart(request, pk):
 
 
 def explore(request, pk):
-    pro = project1.objects.get(pk=pk)
+    pro = Project1.objects.get(pk=pk)
     arg = {'pro': pro}
     return render(request, 'project/exploreproject.html', arg)
 

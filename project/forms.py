@@ -1,7 +1,7 @@
 from django.forms import ModelForm
-from .models import project1
+from .models import Project1
 
-class project(ModelForm):
+class Project1(ModelForm):
     class Meta:
-        models=project1
-        fields=['pro_name','prerequisite','description']
+        models=Project1
+        fields=['pro_name','prerequisite','description','duration']
