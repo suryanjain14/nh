@@ -90,7 +90,7 @@ class Project1(models.Model):
     description=models.TextField()
     created_on=models.DateTimeField(auto_now_add=True)
     created_by=models.CharField(max_length=30,blank=True)
-    duration=models.DateTimeField(auto_now=True)
+    duration=models.IntegerField(blank=True)
     slug = models.SlugField(max_length=30,blank=True)
 
     def save(self, *args, **kwargs):
