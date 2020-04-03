@@ -33,18 +33,21 @@ urlpatterns = [
          auth.PasswordResetCompleteView.as_view(template_name='user/password_reset_complete.html'),
          name='password_reset_complete'
          ),
-    path('db/', uv.db, name='db'),
-    path('profile/<pk>/', uv.profile_with_pk, name='view_profile'),
-    path('connect/<operation>/<pk>/', uv.friend, name='friends'),
-    path('db/add/', uv.add, name='add'),
-    path('db/remove/', uv.remove, name='remove'),
-    path('event/', include('news_update.urls'), name='event'),
-    path('QnA/',include('QnA.urls'),name='question-answer'),
-    path('project/',include('project.urls')),
+    path('db/', uv.db, name='db'),  # this is the url of dashboard, defined in friend app
+    path('connect/<operation>/<pk>/', uv.friend, name='friends'),  # friends,,defined in users app
+
+    path('db/add/', uv.add, name='add'),  # for adding friends,defined in users app
+    path('db/remove/', uv.remove, name='remove'),  # for removing friends,defined in users app
+    path('profile/<pk>/', uv.profile_with_pk, name='view_profile'),  # viewing profile of user
     path('db/start/<pk>/starting', pv.prostart, name='startproject'),
     path('abt/', mtt.meet, name='mtt'),
+
+    # subsequent urls will be found in respective apps
+    path('event/', include('news_update.urls'), name='event'),  # news section
+    path('QnA/', include('QnA.urls'), name='question-answer'),
+    path('project/', include('project.urls')),
     path('groups/', include('groups.urls')),
-    path('contact us/', include('contact.urls'), name='contact'),
+    path('contact us/', include('contact.urls'), name='contact'),  # MEETTHETEAR OR MTTTEAM
     path('resource/', include('resources.urls'), name='r'),
 
 ]
