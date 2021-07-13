@@ -1,3 +1,1 @@
-# nh
-बुरी नज़र वाले तेरा मुह काला 
-सच में
+dynamic website of nerdherd indore
